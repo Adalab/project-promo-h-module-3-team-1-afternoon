@@ -9,9 +9,9 @@ const CardCreator = () => {
   return (
     <div className="cardCreator__wrapper">
       <Header linkHeader="#"/>
+
       <UserCard 
-        urlImage={girl}
-        urlGithub='https://github.com/nataliajimenezq'>
+        urlImage={girl}>
       </UserCard>
       <Footer textFooter="Awesome profile cards @2019" linkFooter="https://adalab.es/" logoFooter={logo} logoName="logo Adalab" />
     </div>

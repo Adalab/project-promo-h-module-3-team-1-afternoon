@@ -11,7 +11,7 @@ const UserCard = (props) => {
               <h1 className="preview__content__title" id="js-title">{props.name}</h1>
               <p className="preview__content__text" id="js-job">{props.profession}</p>
 			    </div>
-          <img className="preview__image" src={props.urlImage} alt="girl photo"/>
+          <img className="preview__image" src={props.urlImage} alt="girlpreview"/>
           <div className="preview__icons">
             <span className="icon">
               <a className="icon--1 hidden-icons" href={props.urlMobile} id="js-mobile">
@@ -24,7 +24,7 @@ const UserCard = (props) => {
               </a>
             </span>
             <span className="icon">
-              <a className="icon--3" href={props.urlLinkedin} id="js-linkedin">
+              <a className="icon--3 hidden-icons" href={props.urlLinkedin} id="js-linkedin">
               <i className="fab fa-linkedin-in"></i>
               </a>
             </span>
