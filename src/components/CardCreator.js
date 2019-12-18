@@ -3,12 +3,17 @@ import Header from './card-creator/Header';
 import MainCardCreator from './card-creator/MainCardCreator';
 import Footer from './landing/Footer';
 import logo from '../images/logo-adalab.png';
+import girl from '../images/girl.png';
+import UserCard from './card-creator/cc-components/UserCard';
+import ShareMessage from './card-creator/cc-components/ShareMessage';
 
 const CardCreator = () => {
   return (
     <div className="cardCreator__wrapper">
       <Header linkHeader="#" />
-      <MainCardCreator />
+      <UserCard
+        urlImage={girl} />
+      <ShareMessage />
       <Footer textFooter="Awesome profile cards @2019" linkFooter="https://adalab.es/" logoFooter={logo} logoName="logo Adalab" />
     </div>
   );

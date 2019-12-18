@@ -1,11 +1,11 @@
 import React from 'react';
-import ResetButton from './ResetButton';
+//import ResetButton from './ResetButton';
 import UserCard from './UserCard';
 
 const Preview = (props) => {
     return (
         <div className="Preview__wrapper">
-            <ResetButton />
+            {/* <ResetButton /> */}
             <UserCard />
         </div>
     );
