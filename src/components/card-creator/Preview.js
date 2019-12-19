@@ -1,7 +1,7 @@
 import React from 'react';
 import PaletteList from './cc-components/PaletteList';
 import FormList from './cc-components/FormList';
-import Share from './Share';
+import Share from './cc-components/Share';
 
 class Preview extends React.Component {
   render() {
