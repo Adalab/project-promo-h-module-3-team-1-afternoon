@@ -6,7 +6,7 @@ import logo from '../images/logo-adalab.png';
 import girl from '../images/girl.png';
 import Preview from './card-creator/Preview';
 import Design from './card-creator/Design';
-import Share from './card-creator/Share';
+import Share from './Share';
 import Form from './card-creator/Form';
 
 const CardCreator = () => {
