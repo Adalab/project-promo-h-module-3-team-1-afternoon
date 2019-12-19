@@ -5,8 +5,14 @@ import FormImageItem from './FormImageItem';
 class FormList extends React.Component {
   render () {
     return(
-      //Este div tiene que estar en el contenedor del Form, dentro va el collapsible y el form.
-      <div class="create__fill">
+			<div class="create__fill">
+				<div class="fill__header-container">
+					<div class="fill__header">
+						<i class="far fa-keyboard"></i>
+						<h2 class="fill__title">rellena</h2>
+					</div>
+					<i class="arrow-button-form fas fa-chevron-down"></i>
+				</div>
         <form className='fill__form' action='' method='post'>
           <div className='fill__form--content'>
             <label className='fill__label' htmlFor='txtFullName'>Nombre completo</label>

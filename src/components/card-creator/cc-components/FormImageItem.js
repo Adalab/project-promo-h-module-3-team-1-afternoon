@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-const FormImageItem = props => {
+const FormImageItem = () => {
   return (
     <div>
       <label for='btnAddImage' className='fill__label'>Imagen de perfil</label>
