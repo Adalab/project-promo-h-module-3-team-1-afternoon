@@ -14,12 +14,15 @@ const CardCreator = () => {
     <div className="cardCreator__wrapper">
       <Header linkHeader="#" />
       <div className="content">
-        <Preview 
-        urlImage={girl}
-        name='Nombre Apellidos'
-        profession='Front-End Developer'
-       />
+        <Preview
+          urlImage={girl}
+          name='Nombre Apellidos'
+          profession='Front-End Developer'
+        />
         <div className="create">
+          <Collapsibles icon="legend_icon far fa-object-ungroup" title="Diseña" arrow="fas fas fa-chevron-up legend_arrow">
+            <PalettesContainer updateCheckboxColor={this.updateCheckboxColor}></PalettesContainer>
+          </Collapsibles>
           <Design />
           <Form />
           <Share />
