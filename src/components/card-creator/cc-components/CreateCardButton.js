@@ -1,12 +1,18 @@
 import React from 'react';
 
 const CreateCardButton = () => {
-    return (
-        <div id="create-button-section" class="validateInputsSection hidden">
-            <button id="create-button" class="create-button form imput submit" type='submit'><i class="logo-button far fa-address-card"></i>crear tarjeta</button>
-            <small class="error"></small>
-        </div>
-    );
+  return (
+    <div className="create__share">
+      <div className="create-intro">
+        <h2 className="title"><i className="logo fas fa-share-alt"></i>comparte</h2>
+        <i className="arrow-button-share fas fa-chevron-down"></i>
+      </div>
+      <div id="create-button-section" className="validateInputsSection">
+        <button id="create-button" className="create-button form imput submit" type='submit'><i className="logo-button far fa-address-card"></i>crear tarjeta</button>
+        <small className="error"></small>
+      </div>
+    </div>
+  )
 }
 
 export default CreateCardButton;
