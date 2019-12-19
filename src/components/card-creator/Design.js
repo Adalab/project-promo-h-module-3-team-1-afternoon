@@ -13,7 +13,7 @@ class PaletteList extends React.Component {
             <span><i className="design-arrow-button fas fa-chevron-down"></i></span>
           </div>
         </div>
-        <div className="view-hidden hidden" id="toggle">
+        <div className="view-hidden" id="toggle">
           <span className="create__design--text">Colores</span>
           <form className="create__design--form">
             <div className="colormix">
