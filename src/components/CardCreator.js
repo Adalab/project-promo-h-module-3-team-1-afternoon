@@ -13,7 +13,6 @@ const CardCreator = () => {
     <div className="cardCreator__wrapper">
       <Header linkHeader="#" />
       <div className="mainCardCreator__wrapper content">
-
         <UserCard urlImage={girl} />
         <div className="collapsible__wrapper content-create">
           <Design />

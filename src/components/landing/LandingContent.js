@@ -1,8 +1,14 @@
 import React from 'react';
 import logoProfile from '../../images/profile.svg';
+import { Link } from 'react-router-dom';
 
 
 const LandingContent = () => {
+
+    const linkStyle = {
+        color: 'white'
+    };
+
     return (
         <main className="main">
             <div className="main__photo">
@@ -26,9 +32,11 @@ const LandingContent = () => {
                     <p className="symbols__text">Comparte</p>
                 </div>
             </div>
-            <div className="main__button">
-                <a href="./profiles.html#home-create"><span className="text-color">comenzar</span></a>
-            </div>
+            <Link to='/create-card' style={linkStyle}>
+                <div className="main__button">
+                    <a href="./profiles.html#home-create"><span className="text-color">comenzar</span></a>
+                </div>
+            </Link>
         </main>
 
     )
