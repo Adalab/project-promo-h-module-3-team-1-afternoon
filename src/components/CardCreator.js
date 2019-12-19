@@ -13,10 +13,13 @@ const CardCreator = () => {
   return (
     <div className="cardCreator__wrapper">
       <Header linkHeader="#" />
-      <div className="mainCardCreator__wrapper content">
-
-        <Preview urlImage={girl} />
-        <div className="collapsible__wrapper content-create">
+      <div className="content">
+        <Preview 
+        urlImage={girl}
+        name='Nombre Apellidos'
+        profession='Front-End Developer'
+       />
+        <div className="create">
           <Design />
           <Form />
           <Share />
