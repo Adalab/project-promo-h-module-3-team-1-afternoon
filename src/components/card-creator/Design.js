@@ -1,6 +1,6 @@
 import React from 'react';
 
-class PaletteList extends React.Component {
+class Design extends React.Component {
   render(){
     return (
         <div className="create__design">
@@ -44,4 +44,4 @@ class PaletteList extends React.Component {
   }
 }
 
-export default PaletteList;
+export default Design;
