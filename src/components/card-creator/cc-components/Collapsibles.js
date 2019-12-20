@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import "../stylesheets/scss/components/Collapsibles.scss";
+import '../../../style/components/Collapsibles.scss';
 
 class Collapsibles extends React.Component {
   constructor(props) {
@@ -19,7 +19,7 @@ class Collapsibles extends React.Component {
     const arrowStyling = this.state.open ? "fa-chevron-up" : "fa-chevron-down";
     return (
       <div>
-        <div onClick={e => this.togglePanel(e)} className="legend">
+        <div onClick={e => this.togglePanel(e)} id="js-toggle" className="legend design-view">
           <i className={this.props.icon} />
           <h2 className="legend_title">{this.props.title}</h2>
           <i className={`fas ${arrowStyling} legend_arrow`} />
