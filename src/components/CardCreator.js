@@ -22,7 +22,7 @@ const CardCreator = () => {
         />
         <div className="create">
           <div className="create__design">
-            <Collapsibles icon="legend_icon far fa-object-ungroup" title="Diseña" >
+            <Collapsibles icon="legend_icon far fa-object-ungroup" title="Diseña" classTitle="create__design--title legend design-view">
               <Design />
             </Collapsibles>
           </div>
