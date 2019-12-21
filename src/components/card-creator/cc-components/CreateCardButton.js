@@ -1,6 +1,6 @@
 import React from 'react';
 
-const CreateCardButton = () =>{
+const CreateCardButton = () => {
   return (
     <div className="create__share">
       <div className="create-intro">

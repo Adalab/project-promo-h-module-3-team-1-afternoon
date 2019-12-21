@@ -6,9 +6,9 @@ class Share extends React.Component {
   render() {
     return (
       <div>
-        <CreateCardButton/>
+        <CreateCardButton />
         <ShareMessage />
-      </div> 
+      </div>
     )
   }
 }
