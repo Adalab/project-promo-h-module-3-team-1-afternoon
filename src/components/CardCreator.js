@@ -22,12 +22,37 @@ const CardCreator = () => {
         />
         <div className="create">
           <div className="create__design">
-            <Collapsibles icon="legend_icon far fa-object-ungroup" title="Diseña" classTitle="create__design--title legend design-view">
+            <Collapsibles
+              icon="legend_icon far fa-object-ungroup"
+              title="Diseña"
+              classTitle="create__design--title legend design-view">
               <Design />
             </Collapsibles>
           </div>
-          <Form />
-          <Share />
+
+          <div className="create__fill">
+            <Collapsibles
+              icon="legend_icon far fa-keyboard"
+              title="rellena"
+              classTitle="fill__title legend design-view"
+            //los estilos q se prevalecen son los de: legend design-view
+            //fill__title q serían los estilos del proyecto anterior, descoloca todo
+            >
+
+              <Form />
+            </Collapsibles>
+          </div>
+
+          <div className="create__share">
+            <Collapsibles
+              icon="legend_icon logo fas fa-share-alt"
+              title="comparte"
+              classTitle="title legend design-view">
+              <Share />
+            </Collapsibles>
+          </div>
+
+
         </div>
       </div>
       <Footer textFooter="Awesome profile cards @2019" linkFooter="https://adalab.es/" logoFooter={logo} logoName="logo Adalab" />

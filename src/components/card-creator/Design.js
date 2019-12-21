@@ -6,7 +6,8 @@ class Design extends React.Component {
       // <div className="create__design">
       //   <div id="js-toggle" className="design-view">
       //     <div className="view-left">
-      //       <span className="create__design--icon"><i className="far fa-object-ungroup"></i></span>
+      //       <span className="create__design--icon">
+      //       <i className="far fa-object-ungroup"></i></span>
       //       <h2 className="create__design--title">Diseña</h2>
       //     </div>
       //     <div className="create__design--arrow">

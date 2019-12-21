@@ -19,7 +19,7 @@ class Collapsibles extends React.Component {
     const arrowStyling = this.state.open ? "fa-chevron-up" : "fa-chevron-down";
     return (
       <div>
-        <div onClick={e => this.togglePanel(e)} id="js-toggle" className="legend design-view">
+        <div onClick={e => this.togglePanel(e)} id="js-toggle" className={this.props.classTitle}>
           <i className={this.props.icon} />
           <h2 className="legend_title">{this.props.title}</h2>
           <i className={`fas ${arrowStyling} legend_arrow`} />
