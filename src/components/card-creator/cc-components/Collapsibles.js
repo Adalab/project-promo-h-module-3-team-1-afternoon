@@ -5,26 +5,23 @@ import '../../../style/components/Collapsibles.scss';
 class Collapsibles extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      open: false
-    };
-    this.togglePanel = this.togglePanel.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
-  togglePanel(e) {
-    this.setState({ open: !this.state.open });
+  handleClick(event) {
+    this.props.togglePanel();
   }
 
   render() {
-    const arrowStyling = this.state.open ? "fa-chevron-up" : "fa-chevron-down";
+    const arrowStyling = this.props.isOpen ? "fa-chevron-up" : "fa-chevron-down";
     return (
       <div>
-        <div onClick={e => this.togglePanel(e)} id="js-toggle" className={this.props.classTitle}>
+        <div onClick={ev => this.handleClick(ev)} id="js-toggle" className={this.props.classTitle}>
           <i className={this.props.icon} />
           <h2 className="legend_title">{this.props.title}</h2>
           <i className={`fas ${arrowStyling} legend_arrow`} />
         </div>
-        {this.state.open ? <div>{this.props.children}</div> : null}
+        {this.props.isOpen ? <div>{this.props.children}</div> : null}
       </div>
     );
   }
