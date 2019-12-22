@@ -47,7 +47,7 @@ class CardCreator extends React.Component {
           <Preview
             urlImage={girl}
             name={this.state.name} 
-            profession={this.state.job}
+            job={this.state.job}
           />
           <div className="create">
             <Design />

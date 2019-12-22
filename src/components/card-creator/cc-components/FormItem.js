@@ -13,7 +13,8 @@ class FormItem extends React.Component{
   onChangeHandler = (event) =>{
     this.props.onChangeHandler(event.target.value, event.target.id)
     this.setState({
-      name: event.target.value
+      name: event.target.value,
+      job: event.target.value
     })
     this.forceUpdate()
     //console.log(this.state.name)
