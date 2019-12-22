@@ -2,59 +2,54 @@ import React from 'react';
 import ResetButton from './cc-components/ResetButton';
 
 const Preview = props => {
+  let classColor = props.colorPalette;
 
-  let colorPalette = props.colorPalette;
-
-  const selectPalette = props => {
-    if (colorPalette === '1') {
-      return 'blue'
-    }
-    if (colorPalette === '2') {
-      return 'red'
-    }
-    if (colorPalette === '3') {
-      return 'yellow'
-    }
-  }
+   if (classColor === '1'){
+     classColor = 'blue'
+   }else if(classColor === '2'){
+     classColor = 'red'
+   }else {
+     classColor = 'yellow'
+   }
 
 
-    return (
-      <div className="content-preview">
-        <section className={`preview ${selectPalette(props)}`}>
-          <ResetButton name="Reset" />
-          <div className="preview__card">
-            <div className="preview__content">
-              <h1 className="preview__content__title" id="js-title">{props.name}</h1>
-              <p className="preview__content__text" id="js-job">{props.profession}</p>
-            </div>
-            <img className="preview__image" src={props.urlImage} alt="girlpreview" />
-            <div className="preview__icons">
-              <span className="icon">
-                <a className="icon--1 hidden-icons" href={props.urlMobile} id="js-mobile">
-                  <i className="fas fa-mobile-alt"></i>
-                </a>
-              </span>
-              <span className="icon">
-                <a className="icon--2 hidden-icons" href={props.urlEmail} id="js-email">
-                  <i className="far fa-envelope"></i>
-                </a>
-              </span>
-              <span className="icon">
-                <a className="icon--3 hidden-icons" href={props.urlLinkedin} id="js-linkedin">
-                  <i className="fab fa-linkedin-in"></i>
-                </a>
-              </span>
-              <span className="icon">
-                <a className="icon--4 hidden-icons" href={props.urlGithub} id="git">
-                  <i className="fab fa-github-alt"></i>
-                </a>
-              </span>
-            </div>
+  return (
+    <div className="content-preview">
+      <section className={`preview ${classColor}`}>
+        <ResetButton name="Reset" />
+        <div className="preview__card">
+          <div className="preview__content">
+            <h1 className="preview__content__title" id="js-title">{props.name}</h1>
+            <p className="preview__content__text" id="js-job">{props.profession}</p>
           </div>
-        </section>
-      </div>
-    )
-  }
+          <img className="preview__image" src={props.urlImage} alt="girlpreview" />
+          <div className="preview__icons">
+            <span className="icon">
+              <a className="icon--1 hidden-icons" href={props.urlMobile} id="js-mobile">
+                <i className="fas fa-mobile-alt"></i>
+              </a>
+            </span>
+            <span className="icon">
+              <a className="icon--2 hidden-icons" href={props.urlEmail} id="js-email">
+                <i className="far fa-envelope"></i>
+              </a>
+            </span>
+            <span className="icon">
+              <a className="icon--3 hidden-icons" href={props.urlLinkedin} id="js-linkedin">
+                <i className="fab fa-linkedin-in"></i>
+              </a>
+            </span>
+            <span className="icon">
+              <a className="icon--4 hidden-icons" href={props.urlGithub} id="git">
+                <i className="fab fa-github-alt"></i>
+              </a>
+            </span>
+          </div>
+        </div>
+      </section>
+    </div>
+  )
+}
 
 
 export default Preview;
