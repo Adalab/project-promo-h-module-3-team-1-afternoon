@@ -9,25 +9,57 @@ import Design from './card-creator/Design';
 import Share from './card-creator/Share';
 import Form from './card-creator/Form';
 
-const CardCreator = () => {
-  return (
-    <div className="cardCreator__wrapper">
-      <Header linkHeader="#" />
-      <div className="content">
-        <Preview
-          urlImage={girl}
-          name='Nombre Apellidos'
-          profession='Front-End Developer'
-        />
-        <div className="create">
-          <Design />
-          <Form />
-          <Share />
+class CardCreator extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      name: '',
+      job: '',
+    };
+    this.onChangeHandler = this.onChangeHandler.bind(this);
+  }
+
+  onChangeHandler(data, id){
+    console.log(data)
+    console.log(id)
+    this.setState((prevState, props) => {
+      let newName = prevState.name;
+      let newJob = prevState.job;
+      if (id === 'txtFullName') {
+        newName = data;
+      } else if (id === 'txtJob') {
+        newJob = data;
+      } else {
+        console.log(`onChangeHandler(id=${id}) valor no está considerado`)
+      }
+      return { 
+        name: newName, 
+        job: newJob 
+      };
+    });
+  }
+
+  render() {
+    return (
+      <div className="cardCreator__wrapper">
+        <Header linkHeader="#" />
+        <div className="content">
+          <Preview
+            urlImage={girl}
+            name={this.state.name} 
+            profession={this.state.job}
+          />
+          <div className="create">
+            <Design />
+            <Form onChangeHandler={this.onChangeHandler}>
+            </Form>
+            <Share />
+          </div>
         </div>
-      </div>
-      <Footer textFooter="Awesome profile cards @2019" linkFooter="https://adalab.es/" logoFooter={logo} logoName="logo Adalab" />
-    </div >
-  );
+        <Footer textFooter="Awesome profile cards @2019" linkFooter="https://adalab.es/" logoFooter={logo} logoName="logo Adalab" />
+      </div >
+    );
+  }
 }
 
 export default CardCreator;
