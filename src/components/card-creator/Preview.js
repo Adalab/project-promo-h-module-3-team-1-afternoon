@@ -1,5 +1,5 @@
 import React from 'react';
-import ResetButton from './cc-components/ResetButton';
+import girl from '../../images/girl.png';
 
 const Preview=props =>{
 
