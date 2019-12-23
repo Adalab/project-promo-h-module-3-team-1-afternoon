@@ -13,7 +13,6 @@ class CardCreator extends React.Component {
       name: 'Nombre Apellidos',
       job: 'Front-End Developer',
     };
-    //this.onChangeHandler = this.onChangeHandler.bind(this);
     this.handleChangeName = this.handleChangeName.bind(this);
   }
   handleChangeName(target) {
