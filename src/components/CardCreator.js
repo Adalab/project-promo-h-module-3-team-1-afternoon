@@ -10,35 +10,22 @@ class CardCreator extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: 'Nombre Apellidos',
-      job: 'Front-End Developer',
+      userData: {
+        name: '',
+        job: '',
+        phone: '',
+        linkedin: '',
+        github: ''
+      }
     };
-    //this.onChangeHandler = this.onChangeHandler.bind(this);
-    this.handleChangeName = this.handleChangeName.bind(this);
-  }
-  handleChangeName(target) {
-    this.setState({
-      [target.name]: target.value});
+
+    this.handleChangeInputText = this.handleChangeInputText.bind(this);
   }
 
-  onChangeHandler(data, id){
-    console.log(data)
-    console.log(id)
-    this.setState((prevState, props) => {
-      let newName = prevState.name;
-      let newJob = prevState.job;
-      if (id === 'txtFullName') {
-        newName = data;
-      } else if (id === 'txtJob') {
-        newJob = data;
-      } else {
-        console.log(`onChangeHandler(id=${id}) valor no está considerado`)
-      }
-      return { 
-        name: newName, 
-        job: newJob 
-      };
-    });
+  handleChangeInputText(target) {
+    let { userData } = this.state;
+    userData[target.name] = target.value;
+    this.setState({ userData });
   }
 
   render() {
@@ -48,13 +35,13 @@ class CardCreator extends React.Component {
         <div className="content">
           <Preview
             urlImage={girl}
-            name={this.state.name} 
-            job={this.state.job}
-          />  
-          <MenuCollapsible 
+            userData={this.state.userData}
+          />
+          <MenuCollapsible
             handleChangeName={this.handleChangeName}
-            userName={this.state.name}
-            job={this.state.job}/>
+            handleChangeInputText={this.handleChangeInputText}
+            userData={this.state.userData}
+          />
         </div>
         <Footer textFooter="Awesome profile cards @2019" linkFooter="https://adalab.es/" logoFooter={logo} logoName="logo Adalab" />
       </div >
