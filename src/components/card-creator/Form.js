@@ -5,13 +5,10 @@ import FormImageItem from './cc-components/FormImageItem';
 class Form extends React.Component {
   render() {
     return (
-      <div className="create__fill">
-        <div className="fill__header-container">
-          <div className="fill__header">
-            <i className="far fa-keyboard"></i>
-            <h2 className="fill__title">rellena</h2>
-          </div>
-          <i className="arrow-button-form fas fa-chevron-down"></i>
+      <form className='fill__form' action='' method='post'>
+        <div className='fill__form--content'>
+          <label className='fill__label' htmlFor='txtFullName'>Nombre completo</label>
+          <input className='fill__input' id='txtFullName' type='text' name='txtFullName' placeholder='Ej: Sally Jill' required />
         </div>
         <form className='fill__form' action='' method='post'>
           <FormItem onChangeHandler = {this.props.onChangeHandler}>
@@ -19,7 +16,6 @@ class Form extends React.Component {
           </FormItem>
           <FormImageItem/>
         </form>
-      </div>
     );
   }
 }
