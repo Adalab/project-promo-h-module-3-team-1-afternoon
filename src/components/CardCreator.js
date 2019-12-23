@@ -6,15 +6,19 @@ import girl from '../images/girl.png';
 import Preview from './card-creator/Preview';
 import MenuCollapsible from './card-creator/MenuCollapsible';
 
-<<<<<<< HEAD
 class CardCreator extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: '',
-      job: '',
+      name: 'Nombre Apellidos',
+      job: 'Front-End Developer',
     };
-    this.onChangeHandler = this.onChangeHandler.bind(this);
+    //this.onChangeHandler = this.onChangeHandler.bind(this);
+    this.handleChangeName = this.handleChangeName.bind(this);
+  }
+  handleChangeName(target) {
+    this.setState({
+      [target.name]: target.value});
   }
 
   onChangeHandler(data, id){
@@ -46,35 +50,16 @@ class CardCreator extends React.Component {
             urlImage={girl}
             name={this.state.name} 
             job={this.state.job}
-          />
-          <div className="create">
-            <Design />
-            <Form onChangeHandler={this.onChangeHandler}>
-            </Form>
-            <Share />
-          </div>
+          />  
+          <MenuCollapsible 
+            handleChangeName={this.handleChangeName}
+            userName={this.state.name}
+            job={this.state.job}/>
         </div>
         <Footer textFooter="Awesome profile cards @2019" linkFooter="https://adalab.es/" logoFooter={logo} logoName="logo Adalab" />
       </div >
     );
   }
-=======
-const CardCreator = () => {
-  return (
-    <div className="cardCreator__wrapper">
-      <Header linkHeader="#" />
-      <div className="content">
-        <Preview
-          urlImage={girl}
-          name='Nombre Apellidos'
-          profession='Front-End Developer'
-        />
-        <MenuCollapsible />
-      </div>
-      <Footer textFooter="Awesome profile cards @2019" linkFooter="https://adalab.es/" logoFooter={logo} logoName="logo Adalab" />
-    </div >
-  );
->>>>>>> dev
 }
 
 export default CardCreator;

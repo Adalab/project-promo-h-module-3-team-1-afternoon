@@ -79,7 +79,13 @@ class MenuCollapsible extends React.Component {
                     //los estilos q se prevalecen son los de: legend design-view
                     //fill__title q serían los estilos del proyecto anterior, descoloca todo
                     >
-                        <Form />
+                        <Form 
+                        handleChangeName={this.props.handleChangeName}
+                        onChangeHandler={this.onChangeHandler}
+                        userName={this.props.name}
+                        job={this.props.job}
+                        >
+                        </Form>
                     </Collapsibles>
                 </div>
 
