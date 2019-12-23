@@ -12,9 +12,18 @@ class CardCreator extends React.Component {
     this.state = {
       name: 'Nombre Apellidos',
       job: 'Front-End Developer',
+      colorPalette: "1",
+    
     };
+    this.updateCheckboxColor = this.updateCheckboxColor.bind(this);
     this.handleChangeName = this.handleChangeName.bind(this);
   }
+
+  updateCheckboxColor(event) {
+    const paletteSelected = event.target.value;
+    this.setState({ colorPalette: `${paletteSelected}` });
+  }
+  
   handleChangeName(target) {
     this.setState({
       [target.name]: target.value});
@@ -47,10 +56,13 @@ class CardCreator extends React.Component {
         <div className="content">
           <Preview
             urlImage={girl}
-            name={this.state.name} 
+            name={this.state.name}
             job={this.state.job}
-          />  
-          <MenuCollapsible 
+            colorPalette={this.state.colorPalette}
+            updateCheckboxColor={this.updateCheckboxColor}
+          />
+           <MenuCollapsible 
+            updateCheckboxColor={this.updateCheckboxColor}
             handleChangeName={this.handleChangeName}
             userName={this.state.name}
             job={this.state.job}/>
@@ -60,5 +72,6 @@ class CardCreator extends React.Component {
     );
   }
 }
+
 
 export default CardCreator;
