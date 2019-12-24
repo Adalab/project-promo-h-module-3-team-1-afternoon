@@ -65,7 +65,7 @@ class MenuCollapsible extends React.Component {
                         icon="legend_icon far fa-object-ungroup"
                         title="Diseña"
                         classTitle="create__design--title legend design-view">
-                        <Design />
+                        <Design updateCheckboxColor={this.props.updateCheckboxColor} />
                     </Collapsibles>
                 </div>
 
