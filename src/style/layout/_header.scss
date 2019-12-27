@@ -1,0 +1,22 @@
+.header{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding-bottom: rem(15);
+	padding-top: rem(15);
+	@media all and (min-width:768px) {
+		height: 8vh;
+		align-items: baseline;
+		margin-left: rem(40);
+		padding: 0;
+	}
+}
+
+.header__photo{
+	width: rem(201);
+	height: rem(50);
+	background: url(../../images/profile.svg);
+	background-size: cover;
+	background-position: center;
+}
