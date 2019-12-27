@@ -12,10 +12,11 @@ class CardCreator extends React.Component {
     this.state = {
       isPhotoDefault: true,
       userData: {
-        colorPalette: '1',
+        palette: '1',
         name: '',
         job: '',
         photo: defaultImage,
+        email: '',
         phone: '',
         linkedin: '',
         github: ''
@@ -30,7 +31,7 @@ class CardCreator extends React.Component {
 
   updateCheckboxColor(event) {
     const paletteSelected = event.target.value;
-    this.setState({ colorPalette: `${paletteSelected}` });
+    this.setState({ palette: `${paletteSelected}` });
   }
 
   handleChangeInputText(target) {
@@ -58,7 +59,7 @@ class CardCreator extends React.Component {
           <Preview
             urlImage={this.state.userData.photo}
             userData={this.state.userData}
-            colorPalette={this.state.colorPalette}
+            palette={this.state.palette}
             updateCheckboxColor={this.updateCheckboxColor}
           />
           <MenuCollapsible

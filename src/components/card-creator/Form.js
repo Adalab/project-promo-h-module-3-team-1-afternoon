@@ -37,6 +37,17 @@ class Form extends React.Component {
         />
 
         <FormInputText
+          title="Email"
+          htmlFor='txtEmail'
+          name='email'
+          value={this.props.userData.email}
+          handleChangeInputText={this.props.handleChangeInputText}
+          type="txtEmail"
+          placeholder='Ej: sally-hill@gmail.com'
+        />
+
+
+        <FormInputText
           title="Teléfono"
           htmlFor='txtPhoneNumber'
           name='phone'

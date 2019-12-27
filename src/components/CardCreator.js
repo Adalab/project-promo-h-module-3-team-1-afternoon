@@ -14,7 +14,7 @@ class CardCreator extends React.Component {
     this.state = {
       name: 'Nombre Apellidos',
       job: 'Front-End Developer',
-      colorPalette: "1",
+      palette: "1",
       isPhotoDefault: true,
       profile: {
         photo: defaultImage
@@ -29,7 +29,7 @@ class CardCreator extends React.Component {
 
   updateCheckboxColor(event) {
     const paletteSelected = event.target.value;
-    this.setState({ colorPalette: `${paletteSelected}` });
+    this.setState({ palette: `${paletteSelected}` });
   }
 
   updatePhoto(img) {
@@ -78,7 +78,7 @@ class CardCreator extends React.Component {
             urlImage={girl}
             name={this.state.name}
             job={this.state.job}
-            colorPalette={this.state.colorPalette}
+            palette={this.state.palette}
             updateCheckboxColor={this.updateCheckboxColor}
           >
             <Profile photo={this.state.profile.photo} />
