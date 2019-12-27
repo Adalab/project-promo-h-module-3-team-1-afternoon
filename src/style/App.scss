@@ -1,11 +1,23 @@
-@import 'core/mixins';
+//Vendors
+@import 'vendors/normalize.scss';
+
+//Core
 @import 'core/variables';
 @import 'core/function';
+@import 'core/mixins';
+
+//Layout
 @import 'layout/base';
+@import 'layout/design';
+@import 'layout/fill';
+@import 'layout/preview';
+@import 'layout/share';
 @import 'layout/header';
 @import 'layout/footer';
-@import 'components/buttons';
+
+//Pages
 @import 'pages/home';
-@import 'pages/profiles';
-@import 'vendors/normalize.scss';
+
+//Components
+@import 'components/buttons';
 

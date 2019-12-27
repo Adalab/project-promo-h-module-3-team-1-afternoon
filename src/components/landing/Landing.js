@@ -1,7 +1,7 @@
 import React from 'react';
-import LandingContent from './landing/LandingContent';
-import Footer from './landing/Footer';
-import logo from '../images/logo-adalab.png';
+import LandingContent from './LandingContent';
+import Footer from './Footer';
+import logo from '../../images/logo-adalab.png';
 
 const Landing = () => {
   return (
