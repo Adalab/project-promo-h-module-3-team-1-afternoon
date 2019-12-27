@@ -23,7 +23,7 @@ class FormItem extends React.Component{
           className='fill__input' 
           id='txtFullName' 
           type='text' 
-          name='name' placeholder='Ej: Sally Jill' required />
+          placeholder='Ej: Sally Jill' required />
         </div>
         <div className='fill__form--content'>
           <label className='fill__label' htmlFor='txtJob'>Puesto</label>

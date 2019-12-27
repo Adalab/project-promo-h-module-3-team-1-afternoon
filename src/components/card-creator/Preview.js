@@ -1,5 +1,5 @@
 import React from 'react';
-import girl from '../../images/girl.png';
+// import girl from '../../images/girl.png';
 
 const Preview=props =>{
 
@@ -23,7 +23,7 @@ let classColor = props.colorPalette;
                 <p className="preview__content__text" id="js-job">{props.job === '' ? "Front-end Developer" : props.job}</p>
               </div>	
               {props.children}	
-              <img className="preview__image" src={girl}/>
+              {/* <img className="preview__image" src={girl}/> */}
               <div className="preview__icons">
                 <span className="icon">
                 <a className="icon--1 hidden-icons" href="" id="js-mobile"><i className="fas fa-mobile-alt"></i></a>

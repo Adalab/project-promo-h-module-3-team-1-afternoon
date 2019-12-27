@@ -6,6 +6,7 @@ class Form extends React.Component {
   constructor(props) {
     super(props);
   }
+  
   render() {
     return (
         <form className='fill__form' action='' method='post'>
@@ -16,10 +17,14 @@ class Form extends React.Component {
           job={this.props.job}>
             {this.props.children}
           </FormItem>
-          <FormImageItem/>
+          <FormImageItem
+          updateAvatar={this.props.updateAvatar}
+          isAvatarDefault={this.props.isAvatarDefault}
+          avatar={this.props.avatar}
+          />
         </form>
     );
   }
 }
 
-export default Form;
+export default Form; 

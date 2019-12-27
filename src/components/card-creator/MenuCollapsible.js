@@ -84,6 +84,9 @@ class MenuCollapsible extends React.Component {
                         onChangeHandler={this.onChangeHandler}
                         userName={this.props.name}
                         job={this.props.job}
+                        updateAvatar={this.props.updateAvatar}
+                        isAvatarDefault={this.props.isAvatarDefault}
+                        avatar={this.props.avatar.avatar}
                         >
                         </Form>
                     </Collapsibles>
