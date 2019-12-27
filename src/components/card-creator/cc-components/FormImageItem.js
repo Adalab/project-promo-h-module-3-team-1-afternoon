@@ -18,12 +18,14 @@ class FormImageItem extends React.Component {
 
   uploadImage(e) {
     const myFile = e.currentTarget.files[0];
+    console.log(this.props);
     this.fr.addEventListener('load', this.getImage);
     this.fr.readAsDataURL(myFile);
   }
 
   getImage() {
     const image = this.fr.result;
+    console.log(this.props);
     this.props.updatePhoto(image);
   }
 
@@ -48,7 +50,6 @@ class FormImageItem extends React.Component {
             type='file'
             name='btnAddImage'
             ref={this.myFileField}
-            className="get-photo__upload-field"
             onChange={this.uploadImage}
             required
           />

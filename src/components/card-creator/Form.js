@@ -32,7 +32,7 @@ class Form extends React.Component {
 
         <FormImageItem
           photo={this.props.userData.photo}
-          updatePhoto={this.updatePhoto}
+          updatePhoto={this.props.updatePhoto}
           isPhotoDefault={this.props.isPhotoDefault}
         />
 
