@@ -1,11 +1,8 @@
 import React from 'react';
 import '../style/App.scss';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-
-
-
-import Landing from './Landing';
-import CardCreator from './CardCreator';
+import Landing from './landing/Landing';
+import CardCreator from './card-creator/CardCreator';
 
 function App() {
   return (

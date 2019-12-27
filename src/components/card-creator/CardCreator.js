@@ -1,10 +1,10 @@
 import React from 'react';
-import Header from './card-creator/Header';
-import Footer from './landing/Footer';
-import logo from '../images/logo-adalab.png';
-import girl from '../images/girl.png';
-import Preview from './card-creator/Preview';
-import MenuCollapsible from './card-creator/MenuCollapsible';
+import Header from './Header';
+import Footer from '../landing/Footer';
+import logo from '../../images/logo-adalab.png';
+import girl from '../../images/girl.png';
+import Preview from './Preview';
+import MenuCollapsible from './MenuCollapsible';
 
 class CardCreator extends React.Component {
   constructor(props) {
