@@ -29,6 +29,8 @@ class Form extends React.Component {
           placeholder='Ej: Front-end unicorn'
         />
 
+        <FormImageItem />
+
         <FormInputText
           title="Teléfono"
           htmlFor='txtPhoneNumber'
@@ -59,7 +61,7 @@ class Form extends React.Component {
           placeholder='Ej: @sally-hill'
         />
 
-        <FormImageItem />
+
       </form>
     );
   }
