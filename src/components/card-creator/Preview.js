@@ -2,7 +2,7 @@ import React from 'react';
 
 const Preview = props => {
 
-  let classColor = props.colorPalette;
+  let classColor = props.palette;
 
   if (classColor === '1') {
     classColor = 'blue'

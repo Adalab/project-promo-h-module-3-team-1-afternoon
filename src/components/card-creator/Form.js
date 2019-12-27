@@ -6,6 +6,7 @@ class Form extends React.Component {
   constructor(props) {
     super(props);
   }
+
   render() {
     return (
       <form className='fill__form' action='' method='post'>
@@ -28,6 +29,23 @@ class Form extends React.Component {
           type="txtJob"
           placeholder='Ej: Front-end unicorn'
         />
+
+        <FormImageItem
+          photo={this.props.userData.photo}
+          updatePhoto={this.props.updatePhoto}
+          isPhotoDefault={this.props.isPhotoDefault}
+        />
+
+        <FormInputText
+          title="Email"
+          htmlFor='txtEmail'
+          name='email'
+          value={this.props.userData.email}
+          handleChangeInputText={this.props.handleChangeInputText}
+          type="txtEmail"
+          placeholder='Ej: sally-hill@gmail.com'
+        />
+
 
         <FormInputText
           title="Teléfono"
@@ -59,10 +77,10 @@ class Form extends React.Component {
           placeholder='Ej: @sally-hill'
         />
 
-        <FormImageItem />
+
       </form>
     );
   }
 }
 
-export default Form;
+export default Form; 

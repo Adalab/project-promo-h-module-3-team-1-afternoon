@@ -83,6 +83,8 @@ class MenuCollapsible extends React.Component {
                             handleChangeName={this.props.handleChangeName}
                             handleChangeInputText={this.props.handleChangeInputText}
                             userData={this.props.userData}
+                            updatePhoto={this.props.updatePhoto}
+                            isPhotoDefault={this.state.isPhotoDefault}
                         >
                         </Form>
                     </Collapsibles>
