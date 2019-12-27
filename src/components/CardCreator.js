@@ -15,16 +15,16 @@ class CardCreator extends React.Component {
       name: 'Nombre Apellidos',
       job: 'Front-End Developer',
       colorPalette: "1",
-      isAvatarDefault: true,
+      isPhotoDefault: true,
       profile: {
-        avatar: defaultImage
+        photo: defaultImage
       }
-  
+
     };
 
     this.updateCheckboxColor = this.updateCheckboxColor.bind(this);
     this.handleChangeName = this.handleChangeName.bind(this);
-    this.updateAvatar = this.updateAvatar.bind(this);
+    this.updatePhoto = this.updatePhoto.bind(this);
   }
 
   updateCheckboxColor(event) {
@@ -32,23 +32,24 @@ class CardCreator extends React.Component {
     this.setState({ colorPalette: `${paletteSelected}` });
   }
 
-  updateAvatar(img) {
-    const {profile} = this.state.profile;
+  updatePhoto(img) {
+    const { profile } = this.state.profile;
     this.setState(prevState => {
-      const newProfile = {...profile, avatar: img};
+      const newProfile = { ...profile, photo: img };
       return {
         profile: newProfile,
-        isAvatarDefault: false
+        isPhotoDefault: false
       }
     });
   }
-  
+
   handleChangeName(target) {
     this.setState({
-      [target.name]: target.value});
+      [target.name]: target.value
+    });
   }
 
-  onChangeHandler(data, id){
+  onChangeHandler(data, id) {
     console.log(data)
     console.log(id)
     this.setState((prevState, props) => {
@@ -61,9 +62,9 @@ class CardCreator extends React.Component {
       } else {
         console.log(`onChangeHandler(id=${id}) valor no está considerado`)
       }
-      return { 
-        name: newName, 
-        job: newJob 
+      return {
+        name: newName,
+        job: newJob
       };
     });
   }
@@ -80,16 +81,16 @@ class CardCreator extends React.Component {
             colorPalette={this.state.colorPalette}
             updateCheckboxColor={this.updateCheckboxColor}
           >
-            <Profile avatar={this.state.profile.avatar}/>
+            <Profile photo={this.state.profile.photo} />
           </Preview>
-           <MenuCollapsible 
+          <MenuCollapsible
             updateCheckboxColor={this.updateCheckboxColor}
             handleChangeName={this.handleChangeName}
             userName={this.state.name}
             job={this.state.job}
-            updateAvatar={this.updateAvatar}
-            isAvatarDefault={this.state.isAvatarDefault}
-            avatar={this.state.profile} />
+            updatePhoto={this.updatePhoto}
+            isPhotoDefault={this.state.isPhotoDefault}
+            photo={this.state.profile} />
         </div>
         <Footer textFooter="Awesome profile cards @2019" linkFooter="https://adalab.es/" logoFooter={logo} logoName="logo Adalab" />
       </div >

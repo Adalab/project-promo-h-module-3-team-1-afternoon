@@ -2,7 +2,7 @@ import React from 'react';
 import Header from './Header';
 import Footer from '../landing/Footer';
 import logo from '../../images/logo-adalab.png';
-import girl from '../../images/girl.png';
+import defaultImage from '../../images/defaultImage.png';
 import Preview from './Preview';
 import MenuCollapsible from './MenuCollapsible';
 
@@ -10,10 +10,12 @@ class CardCreator extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      isPhotoDefault: true,
       userData: {
         colorPalette: '1',
         name: '',
         job: '',
+        photo: defaultImage,
         phone: '',
         linkedin: '',
         github: ''
@@ -22,6 +24,8 @@ class CardCreator extends React.Component {
 
     this.handleChangeInputText = this.handleChangeInputText.bind(this);
     this.updateCheckboxColor = this.updateCheckboxColor.bind(this);
+    this.updatePhoto = this.updatePhoto.bind(this);
+
   }
 
   updateCheckboxColor(event) {
@@ -35,22 +39,34 @@ class CardCreator extends React.Component {
     this.setState({ userData });
   }
 
+  updatePhoto(img) {
+    let { userData } = this.state;
+    this.setState(prevState => {
+      const newUserData = { ...userData, photo: img };
+      return {
+        userData: newUserData,
+        isPhotoDefault: false
+      }
+    });
+  }
+
   render() {
     return (
       <div className="cardCreator__wrapper">
         <Header linkHeader="#" />
         <div className="content">
           <Preview
-            urlImage={girl}
+            urlImage={this.state.userData.photo}
             userData={this.state.userData}
             colorPalette={this.state.colorPalette}
             updateCheckboxColor={this.updateCheckboxColor}
           />
           <MenuCollapsible
             updateCheckboxColor={this.updateCheckboxColor}
-            handleChangeName={this.handleChangeName}
             handleChangeInputText={this.handleChangeInputText}
+            updatePhoto={this.updatePhoto}
             userData={this.state.userData}
+            isPhotoDefault={this.state.isPhotoDefault}
           />
         </div>
         <Footer textFooter="Awesome profile cards @2019" linkFooter="https://adalab.es/" logoFooter={logo} logoName="logo Adalab" />

@@ -6,17 +6,17 @@ class FormImageItem extends React.Component {
     super(props);
     this.fr = new FileReader();
     this.myFileField = React.createRef();
-    
+
     this.handleFilePicker = this.handleFilePicker.bind(this);
     this.uploadImage = this.uploadImage.bind(this);
     this.getImage = this.getImage.bind(this);
   }
 
   handleFilePicker() {
-    this.myFileField.current.click(); 
+    this.myFileField.current.click();
   }
 
-  uploadImage(e){
+  uploadImage(e) {
     const myFile = e.currentTarget.files[0];
     this.fr.addEventListener('load', this.getImage);
     this.fr.readAsDataURL(myFile);
@@ -24,33 +24,47 @@ class FormImageItem extends React.Component {
 
   getImage() {
     const image = this.fr.result;
-    this.props.updateAvatar(image);
+    this.props.updatePhoto(image);
   }
 
   getPreview(isDefault, image) {
-    return (!isDefault) ? {backgroundImage: `url(${image})`} : {};
+    return (!isDefault) ? { backgroundImage: `url(${image})` } : {};
   }
 
   render() {
-    const {isAvatarDefault, avatar} = this.props;
-
+    const { isPhotoDefault, photo } = this.props;
     return (
       <div>
         <label htmlFor='btnAddImage' className='fill__label'>Imagen de perfil</label>
         <div className='fill__file-picker-wrapper'>
-          <input className='fill__button' type='button' value='Añadir imagen' name='btnAddImage' required onClick={this.handleFilePicker}/>
-          <input className='fill__input-file' id='bntFileAddImage' type='file' name='bntFileAddImage' required ref={this.myFileField} className="get-avatar__upload-field" onChange={this.uploadImage}/>
-          <div className="get-avatar__preview" style={this.getPreview(isAvatarDefault, avatar)}></div>
+          <button
+            className='fill__button'
+            type='button'
+            onClick={this.handleFilePicker}
+          > Añadir imagen </button>
+          <input
+            className='fill__input-file'
+            id='bntFileAddImage'
+            type='file'
+            name='btnAddImage'
+            ref={this.myFileField}
+            className="get-photo__upload-field"
+            onChange={this.uploadImage}
+            required
+          />
+          <div
+            className="get-photo__preview"
+            style={this.getPreview(isPhotoDefault, photo)}></div>
         </div>
-      </div> 
+      </div>
     );
   }
 }
 
 FormImageItem.propTypes = {
-  isAvatarDefault: PropTypes.bool.isRequired,
-  avatar: PropTypes.string.isRequired,
-  updateAvatar: PropTypes.func.isRequired
+  isPhotoDefault: PropTypes.bool.isRequired,
+  photo: PropTypes.string.isRequired,
+  updatePhoto: PropTypes.func.isRequired
 };
 
 export default FormImageItem;

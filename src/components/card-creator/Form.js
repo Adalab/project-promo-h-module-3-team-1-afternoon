@@ -30,6 +30,12 @@ class Form extends React.Component {
           placeholder='Ej: Front-end unicorn'
         />
 
+        <FormImageItem
+          photo={this.props.userData.photo}
+          updatePhoto={this.updatePhoto}
+          isPhotoDefault={this.props.isPhotoDefault}
+        />
+
         <FormInputText
           title="Teléfono"
           htmlFor='txtPhoneNumber'
@@ -60,7 +66,7 @@ class Form extends React.Component {
           placeholder='Ej: @sally-hill'
         />
 
-        <FormImageItem />
+
       </form>
     );
   }

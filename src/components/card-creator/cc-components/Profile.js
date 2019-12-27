@@ -1,14 +1,14 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 import PropTypes from 'prop-types';
 
 class Profile extends Component {
   render() {
-    const {avatar} = this.props.avatar;
-    console.log(avatar)
-    console.log(this.props.avatar)
+    const { photo } = this.props.photo;
+    console.log(photo)
+    console.log(this.props.photo)
     return (
       <div className="profile">
-        <div className="profile__avatar " style={{backgroundImage: `url(${this.props.avatar})`}}>
+        <div className="profile__photo " style={{ backgroundImage: `url(${this.props.photo})` }}>
         </div>
       </div>
     );
@@ -16,7 +16,7 @@ class Profile extends Component {
 }
 
 Profile.propTypes = {
-  avatar: PropTypes.string.isRequired
+  photo: PropTypes.string.isRequired
 };
 
 export default Profile;
