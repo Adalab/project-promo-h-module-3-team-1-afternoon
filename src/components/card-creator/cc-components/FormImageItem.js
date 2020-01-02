@@ -54,7 +54,8 @@ class FormImageItem extends React.Component {
             required
           />
           <div
-            className="get-photo__preview"
+            className="fill__image-preview"
+
             style={this.getPreview(isPhotoDefault, photo)}></div>
         </div>
       </div>
