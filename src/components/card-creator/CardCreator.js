@@ -53,6 +53,25 @@ class CardCreator extends React.Component {
   componentDidUpdate() {
     localStorage.setItem('userData', JSON.stringify(this.state.userData));
   }
+  componentDidMount() {
+    const data = JSON.parse(localStorage.getItem('userData'));
+    console.log(data);
+    if (data === null) {
+      this.setState({
+        isPhotoDefault: true,
+        userData: {
+          palette: '1',
+          name: '',
+          job: '',
+          photo: defaultImage,
+          email: '',
+          phone: '',
+          linkedin: '',
+          github: ''
+        }
+      })
+    }
+  }
 
   render() {
     return (
