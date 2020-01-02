@@ -38,7 +38,6 @@ class CardCreator extends React.Component {
     let { userData } = this.state;
     userData[target.name] = target.value;
     this.setState({ userData });
-    localStorage.setItem('userData', JSON.stringify(userData));
   }
 
   updatePhoto(img) {
@@ -50,7 +49,9 @@ class CardCreator extends React.Component {
         isPhotoDefault: false
       }
     });
-    localStorage.setItem('userData', JSON.stringify(userData));
+  }
+  componentDidUpdate() {
+    localStorage.setItem('userData', JSON.stringify(this.state.userData));
   }
 
   render() {
