@@ -1,0 +1,157 @@
+a:link{
+	text-decoration-color: none;
+}
+
+.main{
+	width: 100%;
+	height: 80vh;
+	background-color: $beige;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	@include media ($tablet) {
+		height: 93vh;
+	}
+
+	&__photo {
+		width: rem(250);
+		height: rem(63);
+		margin-top: rem(96);
+		margin-bottom: rem(35.4);
+	@include media ($tablet) {
+			margin-top: rem(81);
+			margin-bottom: rem(20);
+		}
+	@include media ($desktop) {
+			margin-top: rem(117);
+			margin-bottom: rem(30);
+		}
+		&--logo{
+			width: 100%;
+		}
+		
+	@include media ($tablet) {
+			width: rem(419);
+			height: rem(105);
+			margin-bottom: rem(31);
+		}
+	}
+
+	&__section{
+		width: rem(264.8);
+		margin-bottom: rem(17.8);
+	@include media ($tablet) {
+			width: rem(331);
+			height: rem(80);
+			margin-bottom: rem(15);
+		}
+	}
+
+	&__title {
+		width: rem(223);
+		height: rem(24);
+		color: $orange;
+		margin: auto;
+		text-align: center;
+		font-family: $Merriweather;
+		font-size: rem(19.2);
+		
+	@include media ($tablet) {
+			width: rem(278);
+			height: rem(31);
+			font-size: rem(24);
+		}
+	}
+
+	&__text {
+		height: rem(38.4);
+		color: $darkblue;
+		text-align: center;
+		font-family: $OpenSans;
+		font-size: rem(12.8);
+	@include media ($tablet) {
+				width: rem(331);
+				height: rem(48);
+				font-size: rem(16);
+		}
+	}
+
+	&__symbols {
+		width: rem(268);
+		height: rem(73.8);
+		padding: rem(15) rem(20) rem(10) rem(20);
+		border: 1.6px solid $orange-transparent;
+		border-radius: 4px;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+	@include media ($tablet) {
+			width: rem(325);
+			height: rem(86); 
+		}
+		.content-symbols {
+			width: rem(60);
+			height: rem(48.8);
+			text-align: center;
+			border: none;
+		@include media ($tablet) {
+				width: rem(75);
+				height: rem(61);
+			}
+
+			.symbols{
+				font-size: rem(22.4);
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				color: $orange;
+			@include media ($tablet) {
+						font-size: rem(28);
+				}
+				&__text{
+					color: $gunmetal;
+					font-size: rem(12.8);
+					font-family: $OpenSans;
+					margin-top: rem(2);
+					margin: rem(0);
+				@include media ($tablet) {
+						font-size: rem(16);
+					}
+				}
+			}
+		}
+	}  
+    
+	&__button{
+		width: rem(129);
+		height: rem(42);
+		border-radius: 21px;
+		font-weight: 600;
+		background-color: $dirtyblue;
+		color: $white;
+		font-family: $OpenSans;
+		font-size: rem(16);
+		text-transform: uppercase;
+		margin-top: rem(40);
+		margin-bottom: rem(40);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		.text-color{
+			color: $white;
+		}
+
+	@include media ($tablet) {
+			margin-top: rem(40);
+			margin-bottom: rem(40);
+		}
+	@include media ($desktop) {
+			margin-top: rem(60);
+			margin-bottom: rem(70);
+		}
+	}
+}
+
+

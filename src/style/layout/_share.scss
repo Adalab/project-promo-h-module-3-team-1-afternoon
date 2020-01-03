@@ -1,0 +1,140 @@
+.create {
+  padding: rem(27) rem(23) 0;
+  /*background-image: linear-gradient(to bottom, $beige, $white 9%);*/
+  &__share {    
+    padding-bottom: rem(7);
+    display: flex;
+    flex-direction: column;
+    .create-intro {
+      padding-top: rem(10);
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      cursor: pointer;
+      .title {
+        margin: 0;
+        font-family: $OpenSans;
+        font-size: rem(18);
+        font-weight: 600;
+        color: $gunmetal;
+        text-transform: uppercase;
+      }
+      .logo {
+        color: $orange;
+        margin-right: rem(12);
+      }
+      .arrow-button {
+        font-size: rem(18);
+        color: $gunmetal;
+      }
+    }
+    .validateInputsSection{
+      margin-top: rem(30);
+      margin-bottom: rem(25);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      .create-button {
+        width: rem(199);
+        height: rem(50);
+        margin: auto;
+        background-color: $orange;
+        border: none;
+        border-radius: rem(12);
+        box-shadow: 0 rem(1) rem(6) 0 $shadow-button;
+        font-family: $OpenSans;
+        font-size: rem(18);
+        font-weight: 600;
+        text-transform: uppercase;
+        color: $white;
+        cursor: pointer;
+        &:disabled {
+          background-color: #aaa;
+        }
+        .fa-address-card {
+          margin-right: rem(12);
+          font-size: rem(22);
+        }
+      }
+      .error {
+        margin-bottom: 0;
+        color: red;
+        text-align: center;
+        margin-top: rem(15);
+      }
+      .hidden {
+        display: none;
+      }
+    }
+  }
+  
+  .hidden {
+      display: none;
+    }
+  &__share-two {
+    padding: rem(20) 0 rem(30);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-top: rem(1) solid $white-two;
+    .title-share {
+      margin: 0;
+      text-align: center;
+      font-family: $OpenSans;
+      font-size: rem(18);
+      font-weight: 600;
+      color: $gunmetal;
+      span {
+        text-transform: capitalize;
+      }
+    }
+    .link-share {
+      text-align: center;
+      color: $orange;
+      border-radius: rem(3);
+      font-size: rem(12);
+      font-weight: 600;
+      font-family: $OpenSans;
+      margin-top: rem(5);
+      
+    }
+    .create-button-two {
+      padding: 0;
+      width: rem(181);
+      height: rem(30);
+      margin: auto;
+      margin-top: rem(10);
+      background-color: $azure;
+      font-family: $OpenSans;
+      color: $white;
+      border: none;
+      box-shadow: 0 0 4px 0 $shadow-button;
+      font-size: rem(14);
+      font-weight: 400;
+      text-transform: lowercase;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .shareInTwitter{
+        margin-bottom: 2px;
+        padding: 5px 10px;
+        cursor: pointer;
+        color: white;
+      }
+      span {
+        text-transform: capitalize;
+      }
+      .fa-twitter {
+        margin-right: rem(9.5);
+        font-size: rem(18);
+      }
+    }
+    .hidden {
+      display: none;
+    }
+    .noPadding {
+      padding-bottom: 7px;
+    }
+  }
+}
