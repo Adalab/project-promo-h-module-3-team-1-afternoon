@@ -74,10 +74,25 @@ class CardCreator extends React.Component {
         };
       });
 
-    } else if (target.name === 'phone' && target.value.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i)) {
-      this.setState({ userData });
+    } else if (target.name === 'phone' && target.value.match(/^\d{9}$/)) {
+      this.setState(prevState => {
+        return {
+          userData,
+          error: {
+            ...prevState.error,
+            phone: false
+          }
+        };
+      });
     } else if (target.name === 'phone') {
-      alert('tu email no es válido');
+      this.setState(prevState => {
+        return {
+          error: {
+            ...prevState.error,
+            phone: true
+          }
+        };
+      });
     }
 
     // if (target.name === 'phone' || target.value !== '') {
