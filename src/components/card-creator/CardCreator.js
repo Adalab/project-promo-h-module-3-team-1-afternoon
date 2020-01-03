@@ -50,46 +50,25 @@ class CardCreator extends React.Component {
   handleChangeInputText(target) {
     let { userData } = this.state;
     userData[target.name] = target.value;
+    this.setState({ userData });
 
-
-    if (target.name === 'name' || target.name === 'job' || target.name === 'linkedin' || target.name === 'github') {
-      this.setState({ userData });
-    } else if (target.name === 'email' && target.value.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i)) {
-      this.setState(prevState => {
-        return {
-          userData,
-          error: {
-            ...prevState.error,
-            email: false
-          }
-        };
-      });
-    } else if (target.name === 'email') {
+    if (target.name === 'email') {
+      const emailError = !target.value.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i);
       this.setState(prevState => {
         return {
           error: {
             ...prevState.error,
-            email: true
-          }
-        };
-      });
-
-    } else if (target.name === 'phone' && target.value.match(/^\d{9}$/)) {
-      this.setState(prevState => {
-        return {
-          userData,
-          error: {
-            ...prevState.error,
-            phone: false
+            email: emailError
           }
         };
       });
     } else if (target.name === 'phone') {
+      const phoneError = !target.value.match(/^\d{9}$/);
       this.setState(prevState => {
         return {
           error: {
             ...prevState.error,
-            phone: true
+            phone: phoneError
           }
         };
       });
