@@ -15,7 +15,7 @@ const Preview = props => {
   return (
     <div className="content-preview">
       <section className={`preview ${classColor}`}>
-        <button className="preview__button" id="reset"><i className="fa fa-trash-o fa-lg"></i>Reset</button>
+        <button className="preview__button" id="reset" onClick={props.resetUserData}><i className="fa fa-trash-o fa-lg"></i>Reset</button>
         <div className="preview__card">
           <div className="preview__content">
             <h1 className="preview__content__title" id="js-title">{props.userData.name === '' ? "Nombre Apellido" : props.userData.name}</h1>

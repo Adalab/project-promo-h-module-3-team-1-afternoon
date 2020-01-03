@@ -26,6 +26,7 @@ class CardCreator extends React.Component {
     this.handleChangeInputText = this.handleChangeInputText.bind(this);
     this.updatePaletteColor = this.updatePaletteColor.bind(this);
     this.updatePhoto = this.updatePhoto.bind(this);
+    this.resetUserData = this.resetUserData.bind(this);
 
   }
 
@@ -57,13 +58,28 @@ class CardCreator extends React.Component {
       }
     });
   }
+  resetUserData() {
+    this.setState({
+      isPhotoDefault: true,
+      userData: {
+        palette: '1',
+        name: '',
+        job: '',
+        photo: defaultImage,
+        email: '',
+        phone: '',
+        linkedin: '',
+        github: ''
+      }
+    })
+  }
+
   componentDidUpdate() {
     localStorage.setItem('userData', JSON.stringify(this.state.userData));
   }
   componentDidMount() {
     const data = JSON.parse(localStorage.getItem('userData'));
-    console.log(data);
-    console.log(this.baseStateUserData);
+
     if (data === null) {
       this.setState({
         isPhotoDefault: true,
@@ -74,6 +90,7 @@ class CardCreator extends React.Component {
         isPhotoDefault: false,
         userData: data,
       })
+
     }
   }
 
@@ -90,6 +107,7 @@ class CardCreator extends React.Component {
           <Preview
             userData={userData}
             updatePaletteColor={this.updatePaletteColor}
+            resetUserData={this.resetUserData}
           />
           <MenuCollapsible
             updatePaletteColor={this.updatePaletteColor}
