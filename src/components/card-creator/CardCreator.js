@@ -69,6 +69,11 @@ class CardCreator extends React.Component {
         isPhotoDefault: true,
         userData: this.baseStateUserData,
       })
+    } else {
+      this.setState({
+        isPhotoDefault: false,
+        userData: data,
+      })
     }
   }
 
