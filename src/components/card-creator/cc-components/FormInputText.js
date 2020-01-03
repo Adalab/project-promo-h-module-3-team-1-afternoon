@@ -22,6 +22,7 @@ class FormInputText extends React.Component {
                     type={this.props.type}
                     placeholder={this.props.placeholder}
                     required />
+                {this.props.error ? <p className="">Tu {this.props.name} no es válido</p> : ''}
             </div>
         )
     }

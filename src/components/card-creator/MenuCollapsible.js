@@ -85,6 +85,7 @@ class MenuCollapsible extends React.Component {
                             userData={this.props.userData}
                             updatePhoto={this.props.updatePhoto}
                             isPhotoDefault={this.props.isPhotoDefault}
+                            error={this.props.error}
                         >
                         </Form>
                     </Collapsibles>

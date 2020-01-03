@@ -20,6 +20,10 @@ class CardCreator extends React.Component {
         phone: '',
         linkedin: '',
         github: ''
+      },
+      error: {
+        email: false,
+        phone: false
       }
     };
     this.baseStateUserData = this.state.userData;
@@ -27,6 +31,7 @@ class CardCreator extends React.Component {
     this.updatePaletteColor = this.updatePaletteColor.bind(this);
     this.updatePhoto = this.updatePhoto.bind(this);
     this.resetUserData = this.resetUserData.bind(this);
+    //this. validateInputText = this. validateInputText.bind(this);
 
   }
 
@@ -45,7 +50,43 @@ class CardCreator extends React.Component {
   handleChangeInputText(target) {
     let { userData } = this.state;
     userData[target.name] = target.value;
-    this.setState({ userData });
+
+
+    if (target.name === 'name' || target.name === 'job') {
+      this.setState({ userData });
+    } else if (target.name === 'email' && target.value.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i)) {
+      this.setState(prevState => {
+        return {
+          userData,
+          error: {
+            ...prevState.error,
+            email: false
+          }
+        };
+      });
+    } else if (target.name === 'email') {
+      this.setState(prevState => {
+        return {
+          error: {
+            ...prevState.error,
+            email: true
+          }
+        };
+      });
+
+    } else if (target.name === 'phone' && target.value.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i)) {
+      this.setState({ userData });
+    } else if (target.name === 'phone') {
+      alert('tu email no es válido');
+    }
+
+    // if (target.name === 'phone' || target.value !== '') {
+    //   this.setState({ userData });
+    // } else {
+    //   alert('te quedan campos por rellenar');
+    // }
+
+
   }
 
   updatePhoto(img) {
@@ -58,6 +99,7 @@ class CardCreator extends React.Component {
       }
     });
   }
+
   resetUserData() {
     this.setState({
       isPhotoDefault: true,
@@ -77,9 +119,9 @@ class CardCreator extends React.Component {
   componentDidUpdate() {
     localStorage.setItem('userData', JSON.stringify(this.state.userData));
   }
+
   componentDidMount() {
     const data = JSON.parse(localStorage.getItem('userData'));
-
     if (data === null) {
       this.setState({
         isPhotoDefault: true,
@@ -97,7 +139,8 @@ class CardCreator extends React.Component {
   render() {
     const {
       isPhotoDefault,
-      userData
+      userData,
+      error
     } = this.state;
 
     return (
@@ -115,6 +158,7 @@ class CardCreator extends React.Component {
             updatePhoto={this.updatePhoto}
             userData={userData}
             isPhotoDefault={isPhotoDefault}
+            error={error}
           />
         </div>
         <Footer textFooter="Awesome profile cards @2019" linkFooter="https://adalab.es/" logoFooter={logo} logoName="logo Adalab" />

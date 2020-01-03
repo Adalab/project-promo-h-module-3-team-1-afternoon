@@ -40,6 +40,7 @@ class Form extends React.Component {
           handleChangeInputText={this.props.handleChangeInputText}
           type="txtEmail"
           placeholder='n.apellido@gmail.com'
+          error={this.props.error.email}
         />
 
 
@@ -51,6 +52,8 @@ class Form extends React.Component {
           handleChangeInputText={this.props.handleChangeInputText}
           type="tel"
           placeholder='666 66 66 66'
+          error={this.props.error.phone}
+
         />
 
         <FormInputText
