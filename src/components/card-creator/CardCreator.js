@@ -22,16 +22,23 @@ class CardCreator extends React.Component {
         github: ''
       }
     };
-    this.baseState = this.state;
+    this.baseStateUserData = this.state.userData;
     this.handleChangeInputText = this.handleChangeInputText.bind(this);
-    this.updateCheckboxColor = this.updateCheckboxColor.bind(this);
+    this.updatePaletteColor = this.updatePaletteColor.bind(this);
     this.updatePhoto = this.updatePhoto.bind(this);
 
   }
 
-  updateCheckboxColor(event) {
+  updatePaletteColor(event) {
     const paletteSelected = event.target.value;
-    this.setState({ palette: `${paletteSelected}` });
+    this.setState(prevState => {
+      return {
+        userData: {
+          ...prevState.userData,
+          palette: `${paletteSelected}`
+        }
+      };
+    });
   }
 
   handleChangeInputText(target) {
@@ -56,41 +63,35 @@ class CardCreator extends React.Component {
   componentDidMount() {
     const data = JSON.parse(localStorage.getItem('userData'));
     console.log(data);
-    console.log(this.baseState);
+    console.log(this.baseStateUserData);
     if (data === null) {
       this.setState({
         isPhotoDefault: true,
-        userData: {
-          palette: '1',
-          name: '',
-          job: '',
-          photo: defaultImage,
-          email: '',
-          phone: '',
-          linkedin: '',
-          github: ''
-        }
+        userData: this.baseStateUserData,
       })
     }
   }
 
   render() {
+    const {
+      isPhotoDefault,
+      userData
+    } = this.state;
+
     return (
       <div className="cardCreator__wrapper">
         <Header linkHeader="#" />
         <div className="content">
           <Preview
-            urlImage={this.state.userData.photo}
-            userData={this.state.userData}
-            palette={this.state.palette}
-            updateCheckboxColor={this.updateCheckboxColor}
+            userData={userData}
+            updatePaletteColor={this.updatePaletteColor}
           />
           <MenuCollapsible
-            updateCheckboxColor={this.updateCheckboxColor}
+            updatePaletteColor={this.updatePaletteColor}
             handleChangeInputText={this.handleChangeInputText}
             updatePhoto={this.updatePhoto}
-            userData={this.state.userData}
-            isPhotoDefault={this.state.isPhotoDefault}
+            userData={userData}
+            isPhotoDefault={isPhotoDefault}
           />
         </div>
         <Footer textFooter="Awesome profile cards @2019" linkFooter="https://adalab.es/" logoFooter={logo} logoName="logo Adalab" />

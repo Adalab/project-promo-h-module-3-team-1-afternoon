@@ -2,7 +2,7 @@ import React from 'react';
 
 const Preview = props => {
 
-  let classColor = props.palette;
+  let classColor = props.userData.palette;
 
   if (classColor === '1') {
     classColor = 'blue'
@@ -22,7 +22,7 @@ const Preview = props => {
             <p className="preview__content__text" id="js-job">{props.userData.job === '' ? "Front-end Developer" : props.userData.job}</p>
           </div>
           {props.children}
-          <img className="preview__image" alt="profile preview" src={props.urlImage} />
+          <img className="preview__image" alt="profile preview" src={props.userData.photo} />
           <div className="preview__icons">
             <span className="icon">
               <a className="icon--1 hidden-icons" href={`tel:${props.userData.phone}`} id="js-mobile"><i className="fas fa-mobile-alt"></i></a>
