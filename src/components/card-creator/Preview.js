@@ -22,19 +22,19 @@ const Preview = props => {
             <p className="preview__content__text" id="js-job">{props.userData.job === '' ? "Front-end Developer" : props.userData.job}</p>
           </div>
           {props.children}
-          <img className="preview__image" src={props.urlImage} />
+          <img className="preview__image" alt="profile preview" src={props.urlImage} />
           <div className="preview__icons">
             <span className="icon">
-              <a className="icon--1 hidden-icons" href="" id="js-mobile"><i className="fas fa-mobile-alt"></i></a>
+              <a className="icon--1 hidden-icons" href={`tel:${props.userData.phone}`} id="js-mobile"><i className="fas fa-mobile-alt"></i></a>
             </span>
             <span className="icon">
-              <a className="icon--2 hidden-icons" href="" id="js-email"><i className="far fa-envelope"></i></a>
+              <a className="icon--2 hidden-icons" href={`mailto:${props.userData.email}`} id="js-email"><i className="far fa-envelope"></i></a>
             </span>
             <span className="icon">
-              <a className="icon--3 hidden-icons" href="" id="js-linkedin"><i className="fab fa-linkedin-in"></i></a>
+              <a className="icon--3 hidden-icons" href={`http://www.linkedin.com/in/${props.userData.linkedin}`} target="__blank" id="js-linkedin"><i className="fab fa-linkedin-in"></i></a>
             </span>
             <span className="icon">
-              <a className="icon--4 hidden-icons" href="" id="git"><i className="fab fa-github-alt"></i></a>
+              <a className="icon--4 hidden-icons" href={`https://www.github.com/${props.userData.github}`} target="__blank" id="git"><i className="fab fa-github-alt"></i></a>
             </span>
           </div>
         </div>

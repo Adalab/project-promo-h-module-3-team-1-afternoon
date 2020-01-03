@@ -3,10 +3,6 @@ import FormInputText from './cc-components/FormInputText';
 import FormImageItem from './cc-components/FormImageItem';
 
 class Form extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
       <form className='fill__form' action='' method='post'>
@@ -17,7 +13,7 @@ class Form extends React.Component {
           value={this.props.userData.name}
           handleChangeInputText={this.props.handleChangeInputText}
           type="text"
-          placeholder='Ej: Sally Jill'
+          placeholder='Nombre Apellido'
         />
 
         <FormInputText
@@ -27,7 +23,7 @@ class Form extends React.Component {
           value={this.props.userData.job}
           handleChangeInputText={this.props.handleChangeInputText}
           type="txtJob"
-          placeholder='Ej: Front-end unicorn'
+          placeholder='Front-end Developer'
         />
 
         <FormImageItem
@@ -43,7 +39,7 @@ class Form extends React.Component {
           value={this.props.userData.email}
           handleChangeInputText={this.props.handleChangeInputText}
           type="txtEmail"
-          placeholder='Ej: sally-hill@gmail.com'
+          placeholder='n.apellido@gmail.com'
         />
 
 
@@ -54,7 +50,7 @@ class Form extends React.Component {
           value={this.props.userData.phone}
           handleChangeInputText={this.props.handleChangeInputText}
           type="tel"
-          placeholder='Ej: 555-55-55'
+          placeholder='666 66 66 66'
         />
 
         <FormInputText
@@ -64,7 +60,7 @@ class Form extends React.Component {
           value={this.props.userData.linkedin}
           handleChangeInputText={this.props.handleChangeInputText}
           type="text"
-          placeholder='Ej: linkedin.com/in/sally.hill'
+          placeholder='nombre.apellido'
         />
 
         <FormInputText
@@ -74,7 +70,7 @@ class Form extends React.Component {
           value={this.props.userData.github}
           handleChangeInputText={this.props.handleChangeInputText}
           type="text"
-          placeholder='Ej: @sally-hill'
+          placeholder='nombre.apellido'
         />
 
 

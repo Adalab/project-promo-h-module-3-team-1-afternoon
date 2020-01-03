@@ -22,7 +22,7 @@ class CardCreator extends React.Component {
         github: ''
       }
     };
-
+    this.baseState = this.state;
     this.handleChangeInputText = this.handleChangeInputText.bind(this);
     this.updateCheckboxColor = this.updateCheckboxColor.bind(this);
     this.updatePhoto = this.updatePhoto.bind(this);
@@ -56,6 +56,7 @@ class CardCreator extends React.Component {
   componentDidMount() {
     const data = JSON.parse(localStorage.getItem('userData'));
     console.log(data);
+    console.log(this.baseState);
     if (data === null) {
       this.setState({
         isPhotoDefault: true,
