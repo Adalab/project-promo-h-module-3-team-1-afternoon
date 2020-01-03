@@ -24,17 +24,17 @@ const Preview = props => {
           {props.children}
           <img className="preview__image" alt="profile preview" src={props.userData.photo} />
           <div className="preview__icons">
-            <span className="icon">
-              <a className="icon--1 hidden-icons" href={`tel:${props.userData.phone}`} id="js-mobile"><i className="fas fa-mobile-alt"></i></a>
+            <span className={`icon ${props.userData.phone === '' ? 'hidden-icons' : ''}`}>
+              <a className="icon--1" href={`tel:${props.userData.phone}`} id="js-mobile"><i className="fas fa-mobile-alt"></i></a>
             </span>
-            <span className="icon">
-              <a className="icon--2 hidden-icons" href={`mailto:${props.userData.email}`} id="js-email"><i className="far fa-envelope"></i></a>
+            <span className={`icon ${props.userData.email === '' ? 'hidden-icons' : ''}`}>
+              <a className="icon--2" href={`mailto:${props.userData.email}`} id="js-email"><i className="far fa-envelope"></i></a>
             </span>
-            <span className="icon">
-              <a className="icon--3 hidden-icons" href={`http://www.linkedin.com/in/${props.userData.linkedin}`} target="__blank" id="js-linkedin"><i className="fab fa-linkedin-in"></i></a>
+            <span className={`icon ${props.userData.linkedin === '' ? 'hidden-icons' : ''}`}>
+              <a className="icon--3" href={`http://www.linkedin.com/in/${props.userData.linkedin}`} target="__blank" id="js-linkedin"><i className="fab fa-linkedin-in"></i></a>
             </span>
-            <span className="icon">
-              <a className="icon--4 hidden-icons" href={`https://www.github.com/${props.userData.github}`} target="__blank" id="git"><i className="fab fa-github-alt"></i></a>
+            <span className={`icon ${props.userData.github === '' ? 'hidden-icons' : ''}`}>
+              <a className="icon--4" href={`https://www.github.com/${props.userData.github}`} target="__blank" id="git"><i className="fab fa-github-alt"></i></a>
             </span>
           </div>
         </div>
