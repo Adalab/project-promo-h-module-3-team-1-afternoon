@@ -52,7 +52,7 @@ class CardCreator extends React.Component {
     userData[target.name] = target.value;
 
 
-    if (target.name === 'name' || target.name === 'job') {
+    if (target.name === 'name' || target.name === 'job' || target.name === 'linkedin' || target.name === 'github') {
       this.setState({ userData });
     } else if (target.name === 'email' && target.value.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i)) {
       this.setState(prevState => {
