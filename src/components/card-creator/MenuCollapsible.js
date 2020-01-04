@@ -98,7 +98,10 @@ class MenuCollapsible extends React.Component {
                         icon="legend_icon logo fas fa-share-alt"
                         title="comparte"
                         classTitle="title legend design-view">
-                        <Share />
+                        <Share
+                            handleCreateCardButton={this.props.handleCreateCardButton}
+                            cardUrl={this.props.cardUrl}
+                            error={this.props.error} />
                     </Collapsibles>
                 </div>
             </div>

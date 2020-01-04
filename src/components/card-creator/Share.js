@@ -6,8 +6,11 @@ class Share extends React.Component {
   render() {
     return (
       <div>
-        <CreateCardButton />
-        <ShareMessage />
+        <CreateCardButton
+          handleCreateCardButton={this.props.handleCreateCardButton}
+          error={this.props.error} />
+
+        {this.props.cardUrl !== '' ? <ShareMessage cardUrl={this.props.cardUrl} /> : ''}
       </div>
     )
   }

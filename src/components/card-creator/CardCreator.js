@@ -5,6 +5,7 @@ import logo from '../../images/logo-adalab.png';
 import defaultImage from '../../images/defaultImage.png';
 import Preview from './Preview';
 import MenuCollapsible from './MenuCollapsible';
+import sendUserData from '../services/card-service';
 
 class CardCreator extends React.Component {
   constructor(props) {
@@ -23,16 +24,26 @@ class CardCreator extends React.Component {
       },
       error: {
         email: false,
-        phone: false
-      }
+        phone: false,
+        formCompleted: false,
+      },
+      cardUrl: '',
     };
     this.baseStateUserData = this.state.userData;
     this.handleChangeInputText = this.handleChangeInputText.bind(this);
     this.updatePaletteColor = this.updatePaletteColor.bind(this);
     this.updatePhoto = this.updatePhoto.bind(this);
     this.resetUserData = this.resetUserData.bind(this);
-    //this. validateInputText = this. validateInputText.bind(this);
+    this.handleCreateCardButton = this.handleCreateCardButton.bind(this);
+    this.updateFormCompleted = this.updateFormCompleted.bind(this);
 
+  }
+
+  handleCreateCardButton() {
+    sendUserData(this.state.userData)
+      .then(data => {
+        this.setState({ cardUrl: data });
+      });
   }
 
   updatePaletteColor(event) {
@@ -73,15 +84,33 @@ class CardCreator extends React.Component {
         };
       });
     }
+    this.updateFormCompleted()
+  }
 
-    // if (target.name === 'phone' || target.value !== '') {
-    //   this.setState({ userData });
-    // } else {
-    //   alert('te quedan campos por rellenar');
-    // }
 
+  updateFormCompleted() {
+    // si todos los campos del estado userData salvo el teléfono están rellenos, actualizo el estado de formCompleted a true
+    const {
+      name,
+      job,
+      photo,
+      email,
+      linkedin,
+      github
+    } = this.state.userData;
+
+    const isFormCompleted = name && job && photo && email && linkedin && github;
+    this.setState(prevState => {
+      return {
+        error: {
+          ...prevState.error,
+          formCompleted: isFormCompleted
+        }
+      };
+    });
 
   }
+
 
   updatePhoto(img) {
     let { userData } = this.state;
@@ -134,7 +163,8 @@ class CardCreator extends React.Component {
     const {
       isPhotoDefault,
       userData,
-      error
+      error,
+      cardUrl
     } = this.state;
 
     return (
@@ -149,10 +179,12 @@ class CardCreator extends React.Component {
           <MenuCollapsible
             updatePaletteColor={this.updatePaletteColor}
             handleChangeInputText={this.handleChangeInputText}
+            handleCreateCardButton={this.handleCreateCardButton}
             updatePhoto={this.updatePhoto}
             userData={userData}
             isPhotoDefault={isPhotoDefault}
             error={error}
+            cardUrl={cardUrl}
           />
         </div>
         <Footer textFooter="Awesome profile cards @2019" linkFooter="https://adalab.es/" logoFooter={logo} logoName="logo Adalab" />
