@@ -84,12 +84,10 @@ class CardCreator extends React.Component {
         };
       });
     }
-    this.updateFormCompleted()
+    this.updateFormCompleted();
   }
 
-
-  updateFormCompleted() {
-    // si todos los campos del estado userData salvo el teléfono están rellenos, actualizo el estado de formCompleted a true
+  formIsNotCompleted() {
     const {
       name,
       job,
@@ -98,13 +96,17 @@ class CardCreator extends React.Component {
       linkedin,
       github
     } = this.state.userData;
+    return name === '' || job === '' || photo === '' || email === '' || linkedin === '' || github === '';
+  }
 
-    const isFormCompleted = name && job && photo && email && linkedin && github;
+  updateFormCompleted() {
+    // si todos los campos del estado userData salvo el teléfono están rellenos, actualizo el estado de formCompleted a true
+
     this.setState(prevState => {
       return {
         error: {
           ...prevState.error,
-          formCompleted: isFormCompleted
+          formCompleted: this.formIsNotCompleted()
         }
       };
     });
@@ -135,28 +137,23 @@ class CardCreator extends React.Component {
         phone: '',
         linkedin: '',
         github: ''
-      }
-    })
+      },
+      error: {
+        email: false,
+        phone: false,
+        formCompleted: false,
+      },
+      cardUrl: '',
+    });
   }
 
   componentDidUpdate() {
-    localStorage.setItem('userData', JSON.stringify(this.state.userData));
+    localStorage.setItem('appState', JSON.stringify(this.state));
   }
 
   componentDidMount() {
-    const data = JSON.parse(localStorage.getItem('userData'));
-    if (data === null) {
-      this.setState({
-        isPhotoDefault: true,
-        userData: this.baseStateUserData,
-      })
-    } else {
-      this.setState({
-        isPhotoDefault: false,
-        userData: data,
-      })
-
-    }
+    const data = JSON.parse(localStorage.getItem('appState'));
+    if (data !== null) this.setState(data);
   }
 
   render() {
