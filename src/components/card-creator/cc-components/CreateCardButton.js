@@ -15,6 +15,7 @@ const CreateCardButton = (props) => {
       >
         <i className="logo-button far fa-address-card"></i>crear tarjeta
           </button>
+
       {props.cardUrl ? <ShareMessage cardUrl={props.cardUrl} /> : ''}
 
       {props.error.email ? <small className="error">El email no es válido</small> : ''}
