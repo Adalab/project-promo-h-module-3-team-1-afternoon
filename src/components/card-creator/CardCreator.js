@@ -96,7 +96,7 @@ class CardCreator extends React.Component {
       linkedin,
       github
     } = this.state.userData;
-    return name === '' || job === '' || photo === '' || email === '' || linkedin === '' || github === '';
+    return name === '' || job === '' || photo === defaultImage || email === '' || linkedin === '' || github === '';
   }
 
   updateFormCompleted() {

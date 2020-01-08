@@ -1,6 +1,7 @@
 .create__fill {
 	border-bottom: rem(1) solid $white-two;
 	padding-bottom: rem(7);
+	margin-top: rem(10);
 
 	.fill__header-container {
 		display: flex;
@@ -30,8 +31,7 @@
 	
 
 	.fill__form {
-		margin-bottom: rem(20);
-		padding-top: rem(25);
+		margin-top: rem(20);
 
 		.fa-keyboard {
 			color: $orange;
@@ -43,6 +43,7 @@
 			display: block;
 			font-size: rem(14);
 			margin-bottom: rem(7);
+			margin-top: 0.8rem;
 			color: $darkblue;
 			font-family: $OpenSans;
 		}
@@ -50,7 +51,7 @@
 			display: block;
 			font-size: rem(14);
 			border: rem(1) solid $hospitalgreen;
-			margin-bottom: rem(20);
+			margin-top: rem(10);
 			padding: rem(7) rem(9);
 			color: $darkblue;
 			font-family: $OpenSans;
@@ -104,11 +105,11 @@
 	border: 1px solid red;
 }
 
-.errorEmail {
-	font-size: rem(12);
+.error {
+	margin-bottom: rem(50);
 	color: red;
 	text-align: center;
-	margin-bottom: rem(5);
+	margin-top: rem(15);
 }
 
 .marginError {
