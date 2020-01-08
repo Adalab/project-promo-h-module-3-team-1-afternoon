@@ -5,10 +5,10 @@ import logo from '../../images/logo-adalab.png';
 
 const Landing = () => {
   return (
-    <div className="landing__wrapper">
+    <React.Fragment>
       <LandingContent />
       <Footer textFooter="Awesome profile cards @2019" linkFooter="https://adalab.es/" logoFooter={logo} logoName="logo Adalab" />
-    </div>
+    </React.Fragment>
   );
 }
 
