@@ -11,7 +11,7 @@ class CardCreator extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isPhotoDefault: true,
+      isPhotoDefault: false,
       userData: {
         palette: '1',
         name: '',
@@ -127,7 +127,7 @@ class CardCreator extends React.Component {
 
   resetUserData() {
     this.setState({
-      isPhotoDefault: true,
+      isPhotoDefault: false,
       userData: {
         palette: '1',
         name: '',
