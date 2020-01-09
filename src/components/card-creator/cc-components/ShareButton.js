@@ -7,7 +7,7 @@ const ShareButton = ({ cardUrl }) => {
     //linkedInBtn.href = `https://www.linkedin.com/sharing/share-offsite/?url=${cardUrl}`;
 
     return (
-        <div className="create-button-two form imput submit"><a className="shareInTwitter" target="_blank" href={twitterUrl}><i
+        <div className="create-button-two form imput submit"><a className="shareInTwitter" target="_blank" rel="noopener noreferrer" href={twitterUrl}><i
             className="logo-button fab fa-twitter"></i><span>compartir </span>en twitter</a>
         </div>
     )
