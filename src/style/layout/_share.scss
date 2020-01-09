@@ -115,12 +115,15 @@
       text-transform: lowercase;
       display: flex;
       justify-content: center;
-      align-items: center;
+      //align-items: center;
       .shareInTwitter{
         margin-bottom: 2px;
         padding: 5px 10px;
         cursor: pointer;
         color: white;
+        &:hover{
+          transform: scale(1.05);
+      }
       }
       span {
         text-transform: capitalize;
@@ -137,4 +140,32 @@
       padding-bottom: 7px;
     }
   }
+}
+
+.linkedin-btn{
+  width: 195px;
+  height: 33px;
+  display: block;
+  padding-top: 5px;
+  padding-bottom: 9px;
+  border-radius: 5px;
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.32);;
+  border: 1px solid rgb(51, 50, 50);
+  background-color: #dbdfe2;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.83rem;
+  line-height: 1.43;
+  font-weight: 600;
+  color: black;
+  text-align: center;
+  margin: 0 auto 30px;
+  &:hover{
+      transform: scale(1.05);
+  }
+}
+.fa-linkedin{
+  color: #0077b5;
+  font-size: rem(18);
+  margin-top: 1px;
+  padding-right: 5px;
 }

@@ -154,7 +154,10 @@ class CardCreator extends React.Component {
 
   componentDidMount() {
     const data = JSON.parse(localStorage.getItem('appState'));
-    if (data !== null) this.setState(data);
+    if (data !== null) {
+      this.setState(data);
+      this.setState({ cardUrl: '' });
+    }
   }
 
   render() {
