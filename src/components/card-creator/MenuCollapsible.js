@@ -65,7 +65,9 @@ class MenuCollapsible extends React.Component {
                         icon="legend_icon far fa-object-ungroup"
                         title="Diseña"
                         classTitle="create__design--title legend design-view">
-                        <Design updatePaletteColor={this.props.updatePaletteColor} />
+                        <Design
+                            updatePaletteColor={this.props.updatePaletteColor}
+                            palette={this.props.userData.palette} />
                     </Collapsibles>
                 </div>
 
@@ -98,7 +100,10 @@ class MenuCollapsible extends React.Component {
                         icon="legend_icon logo fas fa-share-alt"
                         title="comparte"
                         classTitle="title legend design-view">
-                        <Share />
+                        <Share
+                            handleCreateCardButton={this.props.handleCreateCardButton}
+                            cardUrl={this.props.cardUrl}
+                            error={this.props.error} />
                     </Collapsibles>
                 </div>
             </div>
