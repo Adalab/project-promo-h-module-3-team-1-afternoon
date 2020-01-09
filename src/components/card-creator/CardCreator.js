@@ -64,7 +64,7 @@ class CardCreator extends React.Component {
     this.setState({ userData });
 
     if (target.name === 'email') {
-      const emailError = !target.value.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i);
+      const emailError = !target.value.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i) && target.value !== '';
       this.setState(prevState => {
         return {
           error: {
@@ -74,7 +74,8 @@ class CardCreator extends React.Component {
         };
       });
     } else if (target.name === 'phone') {
-      const phoneError = !target.value.match(/^\d{9}$/);
+      const phoneError = !target.value.match(/^\d{9}$/) && target.value !== '';
+      console.log(phoneError)
       this.setState(prevState => {
         return {
           error: {
