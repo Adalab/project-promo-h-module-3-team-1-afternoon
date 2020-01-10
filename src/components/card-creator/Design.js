@@ -2,9 +2,7 @@ import React from 'react';
 import DesignInputRadio from './cc-components/DesignInputRadio';
 
 const Design = props => {
-
   const { updatePaletteColor } = props;
-
   return (
     <div className="view-hidden" id="toggle">
       <span className="create__design--text">Colores</span>
@@ -26,9 +24,7 @@ const Design = props => {
         />
       </form>
     </div>
-
   )
 }
-
 
 export default Design;

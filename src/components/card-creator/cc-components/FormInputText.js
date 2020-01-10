@@ -32,7 +32,12 @@ class FormInputText extends React.Component {
                     type={type}
                     placeholder={placeholder}
                     required />
-                {error ? <small className="error">* Tu {name} no es válido</small> : ''}
+                {error ? <small className="error">
+                    {name !== 'phone'
+                        ? '* Tu email no es válido'
+                        : '* Tu móvil no es válido'
+                    }
+                </small> : ''}
             </div>
         )
     }

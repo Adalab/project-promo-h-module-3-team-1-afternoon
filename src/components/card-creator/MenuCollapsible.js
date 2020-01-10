@@ -56,6 +56,17 @@ class MenuCollapsible extends React.Component {
         }
     }
     render() {
+        const {
+            userData,
+            handleChangeInputText,
+            updatePhoto,
+            isPhotoDefault,
+            error,
+            updatePaletteColor,
+            handleCreateCardButton,
+            cardUrl
+        } = this.props;
+
         return (
             <div className="MenuCollapsible__wrapper create">
                 <div className="create__design">
@@ -66,8 +77,8 @@ class MenuCollapsible extends React.Component {
                         title="Diseña"
                         classTitle="create__design--title legend design-view">
                         <Design
-                            updatePaletteColor={this.props.updatePaletteColor}
-                            palette={this.props.userData.palette} />
+                            updatePaletteColor={updatePaletteColor}
+                            palette={userData.palette} />
                     </Collapsibles>
                 </div>
 
@@ -82,12 +93,11 @@ class MenuCollapsible extends React.Component {
                     //fill__title q serían los estilos del proyecto anterior, descoloca todo
                     >
                         <Form
-                            handleChangeName={this.props.handleChangeName}
-                            handleChangeInputText={this.props.handleChangeInputText}
-                            userData={this.props.userData}
-                            updatePhoto={this.props.updatePhoto}
-                            isPhotoDefault={this.props.isPhotoDefault}
-                            error={this.props.error}
+                            handleChangeInputText={handleChangeInputText}
+                            userData={userData}
+                            updatePhoto={updatePhoto}
+                            isPhotoDefault={isPhotoDefault}
+                            error={error}
                         >
                         </Form>
                     </Collapsibles>
@@ -101,9 +111,9 @@ class MenuCollapsible extends React.Component {
                         title="comparte"
                         classTitle="title legend design-view">
                         <Share
-                            handleCreateCardButton={this.props.handleCreateCardButton}
-                            cardUrl={this.props.cardUrl}
-                            error={this.props.error} />
+                            handleCreateCardButton={handleCreateCardButton}
+                            cardUrl={cardUrl}
+                            error={error} />
                     </Collapsibles>
                 </div>
             </div>

@@ -75,7 +75,6 @@ class CardCreator extends React.Component {
       });
     } else if (target.name === 'phone') {
       const phoneError = !target.value.match(/^\d{9}$/) && target.value !== '';
-      console.log(phoneError)
       this.setState(prevState => {
         return {
           error: {
@@ -102,7 +101,6 @@ class CardCreator extends React.Component {
 
   updateFormCompleted() {
     // si todos los campos del estado userData salvo el teléfono están rellenos, actualizo el estado de formCompleted a true
-
     this.setState(prevState => {
       return {
         error: {
@@ -111,7 +109,6 @@ class CardCreator extends React.Component {
         }
       };
     });
-
   }
 
 

@@ -4,14 +4,22 @@ import FormImageItem from './cc-components/FormImageItem';
 
 class Form extends React.Component {
   render() {
+    const {
+      userData,
+      handleChangeInputText,
+      updatePhoto,
+      isPhotoDefault,
+      error
+    } = this.props;
+
     return (
       <form className='fill__form' action='' method='post'>
         <FormInputText
           title="Nombre completo"
           htmlFor='txtFullName'
           name='name'
-          value={this.props.userData.name}
-          handleChangeInputText={this.props.handleChangeInputText}
+          value={userData.name}
+          handleChangeInputText={handleChangeInputText}
           type="text"
           placeholder='Nombre Apellido'
         />
@@ -20,27 +28,27 @@ class Form extends React.Component {
           title="Puesto"
           htmlFor='txtJob'
           name='job'
-          value={this.props.userData.job}
-          handleChangeInputText={this.props.handleChangeInputText}
+          value={userData.job}
+          handleChangeInputText={handleChangeInputText}
           type="txtJob"
           placeholder='Front-end Developer'
         />
 
         <FormImageItem
-          photo={this.props.userData.photo}
-          updatePhoto={this.props.updatePhoto}
-          isPhotoDefault={this.props.isPhotoDefault}
+          photo={userData.photo}
+          updatePhoto={updatePhoto}
+          isPhotoDefault={isPhotoDefault}
         />
 
         <FormInputText
           title="Email"
           htmlFor='txtEmail'
           name='email'
-          value={this.props.userData.email}
-          handleChangeInputText={this.props.handleChangeInputText}
+          value={userData.email}
+          handleChangeInputText={handleChangeInputText}
           type="txtEmail"
           placeholder='n.apellido@gmail.com'
-          error={this.props.error.email}
+          error={error.email}
         />
 
 
@@ -48,11 +56,11 @@ class Form extends React.Component {
           title="Teléfono"
           htmlFor='txtPhoneNumber'
           name='phone'
-          value={this.props.userData.phone}
-          handleChangeInputText={this.props.handleChangeInputText}
+          value={userData.phone}
+          handleChangeInputText={handleChangeInputText}
           type="tel"
           placeholder='666 66 66 66'
-          error={this.props.error.phone}
+          error={error.phone}
 
         />
 
@@ -60,8 +68,8 @@ class Form extends React.Component {
           title="Linkedin"
           htmlFor='txtLinkedinUser'
           name='linkedin'
-          value={this.props.userData.linkedin}
-          handleChangeInputText={this.props.handleChangeInputText}
+          value={userData.linkedin}
+          handleChangeInputText={handleChangeInputText}
           type="text"
           placeholder='nombre.apellido'
         />
@@ -70,12 +78,11 @@ class Form extends React.Component {
           title="GitHub"
           htmlFor='txtGithubUser'
           name='github'
-          value={this.props.userData.github}
-          handleChangeInputText={this.props.handleChangeInputText}
+          value={userData.github}
+          handleChangeInputText={handleChangeInputText}
           type="text"
           placeholder='nombre.apellido'
         />
-
 
       </form>
     );

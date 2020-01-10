@@ -4,13 +4,14 @@ import ShareMessage from './cc-components/ShareMessage';
 
 class Share extends React.Component {
   render() {
+    const { handleCreateCardButton, error, cardUrl } = this.props;
     return (
       <div>
         <CreateCardButton
-          handleCreateCardButton={this.props.handleCreateCardButton}
-          error={this.props.error} />
+          handleCreateCardButton={handleCreateCardButton}
+          error={error} />
 
-        {this.props.cardUrl !== '' ? <ShareMessage cardUrl={this.props.cardUrl} /> : ''}
+        {cardUrl !== '' ? <ShareMessage cardUrl={cardUrl} /> : ''}
       </div>
     )
   }
