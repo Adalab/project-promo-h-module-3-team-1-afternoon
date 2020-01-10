@@ -62,7 +62,7 @@
 
 
 
-.color__one, .color__two, .color__three{
+.color-1, .color-2, .color-3{
     width: rem(17);
     height: rem(17);
     margin-right: rem(10);
@@ -75,55 +75,55 @@
     justify-content: flex-end;
     margin: rem(10) rem(0) rem(10) rem(0);
     
-    &__darkblue {
+    &__1-1 {
         width: rem(30);
         height: rem(25);
         background-color: $darkblue;
     }
 
-    &__blue{
+    &__1-2{
         width: rem(30);
         height: rem(25);
         background-color: $dirtyblue;
     }
 
-    &__acqua{
+    &__1-3{
         width: rem(30);
         height: rem(25);
         background-color: $hospitalgreen;
     }
 
-    &__darkred{
+    &__2-1{
         width: rem(30);
         height: rem(25);
         background-color: $driedBlood;
     }
 
-    &__red{
+    &__2-2{
         width: rem(30);
         height: rem(25);
         background-color: $rustyRed;
     }
 
-    &__orange{
+    &__2-3{
         width: rem(30);
         height: rem(25);
         background-color: $tomato;
     }
 
-    &__metalblue{
+    &__3-1{
         width: rem(30);
         height: rem(25);
         background-color: $slateBlue;
     }
 
-    &__yellow{
+    &__3-2{
         width: rem(30);
         height: rem(25);
         background-color: $fadedOrange;
     }
 
-    &__lightgrey{
+    &__3-3{
         width: rem(30);
         height: rem(25);
         background-color: $lightGreyBlue;
