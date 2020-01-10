@@ -8,10 +8,10 @@ const ShareButton = ({ cardUrl }) => {
 
     return (
         <>
-            <div className="create-button-two form imput submit"><a className="shareInTwitter" target="_blank" href={twitterUrl}><i
+            <div className="create-button-two form imput submit"><a className="shareInTwitter" target="_blank" rel="noopener noreferrer" href={twitterUrl}><i
                 className="logo-button fab fa-twitter"></i><span>compartir </span>en twitter</a>
             </div>
-            <div className="create-button-two form imput submit"><a className="linkedin-btn" target="_blank" href={linkedinUrl}><i
+            <div className="create-button-two form imput submit"><a className="linkedin-btn" target="_blank" rel="noopener noreferrer" href={linkedinUrl}><i
                 className="fab fa-linkedin"></i><span>compartir </span>en linkedin</a>
             </div>
         </>

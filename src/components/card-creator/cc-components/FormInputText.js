@@ -11,18 +11,28 @@ class FormInputText extends React.Component {
     }
 
     render() {
+        const {
+            name,
+            value,
+            type,
+            placeholder,
+            error,
+            htmlFor,
+            title
+        } = this.props
+
         return (
             <div className='fill__form--content'>
-                <label className='fill__label' htmlFor={this.props.htmlFor}>{this.props.title}</label>
+                <label className='fill__label' htmlFor={htmlFor}>{title}</label>
                 <input
-                    name={this.props.name}
-                    value={this.props.value}
+                    name={name}
+                    value={value}
                     onChange={this.handleChangeInputText}
                     className='fill__input'
-                    type={this.props.type}
-                    placeholder={this.props.placeholder}
+                    type={type}
+                    placeholder={placeholder}
                     required />
-                {this.props.error ? <small className="error">* Tu {this.props.name} no es válido</small> : ''}
+                {error ? <small className="error">* Tu {name} no es válido</small> : ''}
             </div>
         )
     }

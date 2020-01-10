@@ -34,7 +34,7 @@ const LandingContent = () => {
             </div>
             <Link to='/card-creator' style={linkStyle}>
                 <div className="main__button">
-                    <a href="./profiles.html#home-create"><span className="text-color">comenzar</span></a>
+                    <span className="text-color">comenzar</span>
                 </div>
             </Link>
         </main>

@@ -142,7 +142,9 @@ a:link{
 		.text-color{
 			color: $white;
 		}
-
+		&:hover{
+			background-color: $orange;
+		}
 	@include media ($tablet) {
 			margin-top: rem(40);
 			margin-bottom: rem(40);
