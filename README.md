@@ -1,4 +1,4 @@
-Awesome profile cards- Sisters React
+Awesome profile cards- Sisters Re-Act
 
 Se trata de una aplicación web que permite al usuario realizar tarjetas profesionales de manera digital. Es un proyecto de código de JavaScript heredado, que hemos traspasado íntegramente a la librería React.
 
