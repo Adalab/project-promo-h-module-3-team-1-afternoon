@@ -9,7 +9,7 @@ const DesignInputRadio = (props) => {
             type="radio" value={numberPalette}
             name="COLORES"
             checked={palette === numberPalette}
-            onClick={updatePaletteColor} />
+            onChange={updatePaletteColor} />
         <div className={`colormix__${numberPalette}-1`}></div>
         <div className={`colormix__${numberPalette}-2`}></div>
         <div className={`colormix__${numberPalette}-3`}></div>

@@ -1,6 +1,6 @@
 import React from 'react';
 import '../style/App.scss';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { HashRouter as Router, Switch, Route } from 'react-router-dom';
 import Landing from './landing/Landing';
 import CardCreator from './card-creator/CardCreator';
 
