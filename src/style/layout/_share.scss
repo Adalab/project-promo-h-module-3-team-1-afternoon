@@ -101,7 +101,7 @@
     }
     .create-button-two {
       padding: 0;
-      width: rem(181);
+      width: rem(190);
       height: rem(30);
       margin: auto;
       margin-top: rem(10);
@@ -115,8 +115,8 @@
       text-transform: lowercase;
       display: flex;
       justify-content: center;
-      //align-items: center;
-      .shareInTwitter{
+      
+      .twitter-btn{
         margin-bottom: 2px;
         padding: 5px 10px;
         cursor: pointer;
