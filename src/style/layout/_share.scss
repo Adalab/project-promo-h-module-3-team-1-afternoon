@@ -101,49 +101,65 @@
     }
     .create-button-two {
       padding: 0;
-      width: rem(190);
+      width: rem(202);
       height: rem(30);
       margin: auto;
-      margin-top: rem(10);
+      margin-top: rem(20);
       background-color: $azure;
       font-family: $OpenSans;
       color: $white;
-      border: none;
+      border-radius: 5px;
       box-shadow: 0 0 4px 0 $shadow-button;
       font-size: rem(14);
       font-weight: 400;
       text-transform: lowercase;
       display: flex;
       justify-content: center;
+    } 
       
-      .twitter-btn{
-        margin-bottom: 2px;
-        padding: 5px 10px;
-        cursor: pointer;
-        color: white;
-        &:hover{
-          transform: scale(1.05);
-      }
-      }
-      span {
-        text-transform: capitalize;
-      }
-      .fa-twitter {
-        margin-right: rem(9.5);
-        font-size: rem(18);
-      }
-    }
-    .hidden {
-      display: none;
-    }
-    .noPadding {
-      padding-bottom: 7px;
-    }
   }
 }
 
+.twitter-btn{
+  margin-bottom: 2px;
+  padding: 5px 10px;
+  cursor: pointer;
+  color: white;
+  &:hover{
+    transform: scale(1.05);
+  }
+}
+span {
+  text-transform: capitalize;
+}
+.fa-twitter {
+  margin-right: rem(9.5);
+  font-size: rem(18);
+}
+
+.hidden {
+display: none;
+}
+.noPadding {
+padding-bottom: 7px;
+}
+.facebook-btn {
+  margin-bottom: 2px;
+  padding: 5px 10px;
+  cursor: pointer;
+  color: white;
+  background-color: darkblue;
+  &:hover{
+    transform: scale(1.05);
+  }
+}
+.fa-facebook {
+  margin-right: 0.59375rem;
+  font-size: 1.125rem;
+  border-radius: 5px;
+}
 .linkedin-btn{
-  width: 195px;
+  width: rem(202);
   height: 33px;
   display: block;
   padding-top: 5px;

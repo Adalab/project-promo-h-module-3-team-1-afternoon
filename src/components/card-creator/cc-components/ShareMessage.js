@@ -5,7 +5,8 @@ const ShareMessage = ({ cardUrl }) => {
     const twitterText = encodeURIComponent('He creado esta tarjeta con Awesome Profile Cards. ¡Échale un vistazo!');
     const twitterHashtag = encodeURIComponent('adalab,adalaber,frontEnd,awesomeCards');
     const twitterUrl = `https://twitter.com/intent/tweet?text=${twitterText}&url=${cardUrl}&hashtags=${twitterHashtag}`;
-    //const linkedinUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${cardUrl}`;
+    const linkedinUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${cardUrl}`;
+    // const facebookUrl = `https://www.facebook.com/sharer/sharer.php?u=${cardUrl}`
 
     return (
         <div id="share-card" className="active-share create__share-two">
@@ -15,8 +16,8 @@ const ShareMessage = ({ cardUrl }) => {
             <ShareButton
                 name={'twitter'}
                 url={twitterUrl} />
-            {/* <ShareButton name={'linkedin'}
-                url={linkedinUrl} /> */}
+            <ShareButton name={'linkedin'}
+                url={linkedinUrl} />
 
         </div>
     )
